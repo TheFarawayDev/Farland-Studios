@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Typing Speed Minigame</title>
+        <style>
+            body {
+                font-family: 'Abbett', serif;
+                background-color: #333;
+                color: #fff;
+            }
+
+            h1 {
+                text-align: center;
+                color: #fff;
+            }
+
+            p {
+                font-size: 18px;
+                color: #fff;
+            }
+
+            #word {
+                font-size: 48px;
+                font-weight: bold;
+                color: #fff;
+                margin-bottom: 20px;
+                text-align: center;
+                            }
+
+                            #input {
+                                font-size: 24px;
+                                padding: 10px;
+                                border: 2px solid #ccc;
+                                border-radius: 5px;
+                                margin-right: 10px;
+                                width: 200px;
+                                background-color: #fff;
+                                color: #333;
+                            }
+
+                            #result {
+                                font-size: 18px;
+                                color: #fff;
+                                margin-top: 20px;
+                            }
+                            .answer-box {
+                                display: flex;
+                                align-items: center;
+                            }
+                            .answer-box input {
+                                flex: 1;
+                            }
+                            #countdown {
+                                font-size: 48px;
+                                font-weight: bold;
+                                color: #fff;
+                                text-align: center;
+                                margin-top: 50px;
+                            }
+                            #container {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100vh;
+                            }
+                            #game {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #333;
+                                padding: 20px;
+                                border-radius: 10px;
+                                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+                            }
+                            #game p {
+                                margin: 10px 0;
+                            }
+                            #game button {
+                                font-size: 18px;
+                                padding: 10px;
+                                border: none;
+                                border-radius: 5px;
+                                background-color: #fff;
+                                color: #333;
+                                cursor: pointer;
+                                margin-top: 20px;
+                            }
+                            #game button:hover {
+                                background-color: #666;
+                                color: #fff;
+                            }
+                            /* Added styles for light mode */
+                            .light-mode {
+                                background-color: #fff;
+                                color: #333;
+                            }
+                            .light-mode h1 {
+                                color: #333;
+                            }
+                            .light-mode p {
+                                color: #333;
+                            }
+                            .light-mode #input {
+                                background-color: #333;
+                                color: #fff;
+                            }
+                            .light-mode #game {
+                                background-color: #fff;
+                                color: #333;
+                            }
+                            .light-mode #game button {
+                                background-color: #333;
+                                color: #fff;
+                            }
+                            /* Added styles for dark mode */
+                                                        .dark-mode {
+                                                            background-color: #333;
+                                                            color: #fff;
+                                                        }
+                                                        .dark-mode h1 {
+                                                            color: #fff;
+                                                        }
+                                                        .dark-mode p {
+                                                            color: #fff;
+                                                        }
+                                                        .dark-mode #input {
+                                                            background-color: #fff;
+                                                            color: #333;
+                                                        }
+                                                        .dark-mode #game {
+                                                            background-color: #333;
+                                                            color: #fff;
+                                                        }
+                                                        .dark-mode #game button {
+                                                            background-color: #fff;
+                                                            color: #333;
+                                                        }
+                                                        /* Added styles for light mode text */
+                                                        .light-mode-text {
+                                                            color: #000;
+                                                        }
+                                                    </style>
+                                                    <link href="https://fonts.googleapis.com/css2?family=Abbett&display=swap" rel="stylesheet">
+                                                </head>
+                                                <body>
+                                                    <div id="container">
+                                                        <div id="game">
+                                                            <h1>Typing Speed Minigame</h1>
+                                                            <p>Type the words below in under <span id="time-limit">60</span> seconds:</p>
+                                                            <p id="countdown"></p>
+                                                            <p id="word"></p>
+                                                            <div class="answer-box">
+                                                                <input type="text" id="input" disabled/>
+                                                            </div>
+                                                            <p id="result"></p>
+                                                            <button id="start">Start Game</button>
+                                                            <button id="restart" style="display:none">Restart Game</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <script>
+                                                        const words = ["car", "truck", "motorcycle", "bus", "train", "boat", "airplane", "helicopter", "bicycle", "scooter", "skateboard", "tractor", "ambulance", "firetruck", "policecar", "taxi", "van", "jeep", "limousine", "submarine", "spaceship", "hotairballoon", "blimp", "hovercraft", "snowmobile", "apple", "banana", "orange", "grape", "strawberry", "blueberry", "raspberry", "mango", "pineapple", "watermelon", "kiwi", "peach", "pear", "plum", "cherry", "lemon", "lime", "grapefruit", "pomegranate", "apricot", "avocado", "blackberry", "cantaloupe", "coconut", "cranberry", "fig", "guava", "honeydew", "kumquat", "lychee", "nectarine", "papaya", "passionfruit", "persimmon", "tangerine", "football", "basketball", "baseball", "hockey", "tennis", "golf", "soccer", "swimming", "boxing", "volleyball", "rugby", "cricket", "running", "yoga", "pilates", "chemistry", "biology", "physics", "mathematics", "history", "geography", "psychology", "sociology", "philosophy", "literature", "art", "music", "computer", "laptop", "smartphone", "tablet", "television", "camera", "headphones", "speaker", "keyboard", "mouse", "printer", "scanner", "router", "modem", "harddrive", "flashdrive", "battery", "charger", "microphone", "webcam", "smartwatch", "fitness tracker"];
+                                                        let currentWord = "";
+                                                        let timerId = null;
+                                                        let count = 0;
+                                                        let timeLeft = 60;
+                                                        let gameStarted = false;
+                                                        let startTime = null;
+                                                        let endTime = null;
+                                                        let timeTaken = null;
+                                                        let speed = null;
+                                                        let totalSpeed = 0;
+
+                                                        function generateWord() {
+                                                            const index = Math.floor(Math.random() * words.length);
+                                                            currentWord = words[index];
+                                                            document.getElementById("word").textContent = currentWord;
+                                                            startTime = new Date().getTime();
+                                                        }
+
+                                                        function startTimer() {
+                                                            document.getElementById("countdown").textContent = timeLeft;
+                                                            timerId = setInterval(() => {
+                                                                timeLeft -= 0.01;
+                                                                document.getElementById("countdown").textContent = timeLeft.toFixed(2);
+                                                                if (timeLeft <= 0) {
+                                                                    clearInterval(timerId);
+                                                                    endTime = new Date().getTime();
+                                                                    timeTaken = (endTime - startTime) / 1000;
+                                                                    document.getElementById("result").innerHTML = "Time's up! Your average speed is <u><b>" + (totalSpeed/count*5).toFixed(2) + "</b></u> words per minute. You typed a total of <u><b>" + count + "</b></u> words.";
+                                                                    document.getElementById("result").style.textAlign = "center";
+                                                                    document.getElementById("result").style.color = "#f00";
+                                                                    document.getElementById("result").style.fontWeight = "bold";
+                                                                    gameStarted = false;
+                                                                    document.getElementById("start").style.display = "none";
+                                                                    document.getElementById("restart").style.display = "block";
+                                                                    document.getElementById("input").disabled = true;
+                                                                }
+                                                            }, 10);
+                                                        }
+
+                                                        function stopTimer() {
+                                                            clearInterval(timerId);
+                                                        }
+
+                                                        function checkInput() {
+                                                            const input = document.getElementById("input").value;
+                                                            const wordsTyped = input.split(" ").length;
+                                                            count += wordsTyped;
+                                                            if (input === currentWord) {
+                                                                endTime = new Date().getTime();
+                                                                timeTaken = (endTime - startTime) / 1000;
+                                                                totalSpeed += parseFloat((currentWord.length/timeTaken).toFixed(2));
+                                                                document.getElementById("result").innerHTML = "Success! Your speed is <u><b>" + (wordsTyped/timeTaken*60).toFixed(2) + "</b></u> words per minute. Next word:";
+                                                                generateWord();
+                                                                document.getElementById("input").value = "";
+                                                            } else {
+                                                                document.getElementById("result").textContent = "Incorrect. Try again.";
+                                                            }
+                                                        }
+
+                                                        function restartGame() {
+                                                            clearInterval(timerId);
+                                                            currentWord = "";
+                                                            count = 0;
+                                                            timeLeft = 60;
+                                                            generateWord();
+                                                            startTimer();
+                                                            document.getElementById("result").textContent = "";
+                                                            document.getElementById("countdown").style.color = "#fff";
+                                                            document.getElementById("countdown").style.fontWeight = "normal";
+                                                            document.getElementById("countdown").style.textAlign = "left";
+                                                            gameStarted = true;
+                                                            document.getElementById("start").style.display = "block";
+                                                            document.getElementById("restart").style.display = "none";
+                                                            document.getElementById("input").disabled = false;
+                                                            document.getElementById("input").focus();
+                                                        }
+
+                                                        document.getElementById("start").addEventListener("click", function() {
+                                                            if (!gameStarted) {
+                                                                generateWord();
+                                                                startTimer();
+                                                                gameStarted = true;
+                                                                document.getElementById("start").textContent = "Restart Game";
+                                                                document.getElementById("input").disabled = false;
+                                                                document.getElementById("input").focus();
+                                                            } else {
+                                                                restartGame();
+                                                            }
+                                                        });
+
+                                                        document.getElementById("restart").addEventListener("click", function() {
+                                                            restartGame();
+                                                        });
+
+                                                        document.getElementById("input").addEventListener("keyup", function(event) {
+                                                            if (event.keyCode === 13) {
+                                                                event.preventDefault();
+                                                                checkInput();
+                                                            }
+                                                        });
+
+                                                        window.addEventListener('beforeunload', function (e) {
+                                                            if (gameStarted) {
+                                                                e.preventDefault();
+                                                                e.returnValue = '';
+                                                            }
+                                                        });
+
+                                                        window.addEventListener('unload', function () {
+                                                            if (gameStarted) {
+                                                                alert('You have an unfinished game!');
+                                                            }
+                                                        });
+
+                                                        // Added event listener for light/dark mode button
+                                                        /*document.getElementById("mode").addEventListener("click", function() {
+                                                            const body = document.querySelector("body");
+                                                            if (body.classList.contains("light-mode")) {
+                                                                body.classList.remove("light-mode");
+                                                                body.classList.add("dark-mode");
+                                                                document.getElementById("mode").textContent = "Dark Mode";
+                                                            } else {
+                                                                body.classList.remove("dark-mode");
+                                                                body.classList.add("light-mode");
+                                                                document.getElementById("mode").textContent = "Light Mode";
+                                                            }
+                                                            // Added logic to change text color in light mode
+                                                            const textElements = document.querySelectorAll(".light-mode-text");
+                                                            textElements.forEach(element => {
+                                                                if (body.classList.contains("light-mode")) {
+                                                                    element.style.color = "#000";
+                                                                } else {
+                                                                    element.style.color = "#fff";
+                                                                }
+                                                            });
+                                                        });*/
+                                                    </script>
+                                                </body>
+                                            </html>

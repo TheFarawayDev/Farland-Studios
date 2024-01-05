@@ -1,0 +1,77 @@
+<!-- FILEPATH: /workspaces/Demo-Softwares/Utils. Package/Student Dictionary/countdown.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Clock</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/caxo'); /* BEGIN: Import Caxo font */
+
+        body {
+            background-color: #f2f2f2; /* Set the background color to a modern color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .clock {
+            width: 550px; /* Increase the width to make the circle 1.5x bigger */
+            height: 550px; /* Increase the height to make the circle 1.5x bigger */
+            border: 4.5px solid #333;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Caxo', sans-serif; /* Use the Caxo font */
+        }
+
+        .countdown {
+            font-size: 34px;
+            text-align: center; /* Center the text */
+            text-justify: inter-word;
+        }
+
+        #timer {
+            font-weight: bold; /* Make the time part bold */
+            font-size: 32px; /* Increase the font size by 5px */
+            text-align: center; /* Center the time part */
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="countdown">
+            <p>Welcome Mrs. Pfister</p>
+            <p>Countdown to Summer Break</p> <!-- Update the countdown date to May 25, 2024 -->
+            <p id="timer"></p>
+        </div>
+    </div>
+
+    <script>
+        // Calculate the remaining time until May 25, 2024
+        var countDownDate = new Date("May 25, 2024 00:00:00").getTime(); // Update the countdown date to May 25, 2024
+
+        // Update the countdown every 1 second
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
