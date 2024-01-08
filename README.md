@@ -25,7 +25,8 @@ The following games can't be fixed:
 <li>Major Platforms (Roblox, etc.)</li>
 </ol>
 The following users are <strong>Banned Permanently or Temporarily</strong>:
-<ol>
-<li> Atticus G.</li>
-<li> James D. </li>
-</ol>
+Permanently Banned 
+ <li>Atticus G.</li> 
+ <li>James D.</li>
+ <li>Pennie M.</li>
+ <li>Brooklyn K.</li>
