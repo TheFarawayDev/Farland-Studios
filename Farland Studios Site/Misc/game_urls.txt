@@ -70,6 +70,9 @@ Run Games
 Slope
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml
 
+Snake 3d
+https://www.coolmathgames.com/sites/default/files/public_games/49714/
+
 Snow Rider
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@6e97a528bfcdd0623e0cd99ad352baebf47a6b70/sr3d2.xml
 
