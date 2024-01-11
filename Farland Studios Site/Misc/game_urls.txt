@@ -11,11 +11,11 @@ Cookie Clicker
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml
 
 Diggy
-    Diggy | Original
-    https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fdiggy.xml
+Diggy | Original
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fdiggy.xml
     
-    Diggy | Gold Rush
-    https://www.coolmathgames.com/sites/default/files/public_games/48535/
+Diggy | Gold Rush
+https://www.coolmathgames.com/sites/default/files/public_games/48535/
 
 
 Drive Mad
@@ -34,8 +34,8 @@ Happy Wheels
 https://unblocked76.github.io/happy-wheels/
 
 .IO Games
-    Paper.io 2
-    https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml
+Paper.io 2
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@b8b8a03997f38305098c2f2f5fe14907463cd23b/build/ppo2/ppo2.xml
 
 
 Jacksmith
@@ -45,27 +45,27 @@ Minecraft (Eaglercraft)
 https://mopnop.github.io/eaglercraft-singleplayer/
 
 Moto X3M Games
-    Moto X3M | 1
-    https://www.coolmathgames.com/sites/default/files/public_games/47685/
+Moto X3M | 1
+https://www.coolmathgames.com/sites/default/files/public_games/47685/
 
-    Moto X3M | 2
-    https://unblocked76.github.io/moto-x3m-2/
+Moto X3M | 2
+https://unblocked76.github.io/moto-x3m-2/
 
-    Moto X3M | Pool Party
-    https://unblocked76.github.io/moto-x3m-pool-party/
+Moto X3M | Pool Party
+https://unblocked76.github.io/moto-x3m-pool-party/
 
-    Moto X3M | Spooky Land
-    https://unblocked76.github.io/moto-x3m-spooky-land/
+Moto X3M | Spooky Land
+https://unblocked76.github.io/moto-x3m-spooky-land/
 
-    Moto X3M | Winter
-    https://unblocked76.github.io/moto-x3m-winter/
+Moto X3M | Winter
+https://unblocked76.github.io/moto-x3m-winter/
 
 Retro Bowl
 https://unblocked76.github.io/retro-bowl/
 
 Run Games
-    Run | 3
-    www.coolmathgames.com/sites/default/files/public_games/49436/
+Run | 3
+www.coolmathgames.com/sites/default/files/public_games/49436/
 
 Slope
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@77d7c057275710c07925ba951e9e56902d101c84/3sp.xml
@@ -77,14 +77,14 @@ Snow Rider
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@6e97a528bfcdd0623e0cd99ad352baebf47a6b70/sr3d2.xml
 
 Subway Surfers Games
-    Subway Surfers | Bali
-    https://unblocked76.github.io/subway-surfers-bali/
+Subway Surfers | Bali
+https://unblocked76.github.io/subway-surfers-bali/
 
-    Subway Surfers | NYC
-    https://unblocked76.github.io/subway-surfers-nyc/
+Subway Surfers | NYC
+https://unblocked76.github.io/subway-surfers-nyc/
 
-    Subway Surfers | Original
-    https://unblocked76.github.io/subway-surfers/
+Subway Surfers | Original
+https://unblocked76.github.io/subway-surfers/
 
 Temple Run 2
 https://unblocked76.github.io/temple-run-2/

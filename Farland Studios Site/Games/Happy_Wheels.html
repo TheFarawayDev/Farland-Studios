@@ -2,47 +2,20 @@
 <html>
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        var newUrl = "https://unblocked76.github.io/happy-wheels/";
-
-        $(document).ready(function () {
-            $.get("usernames&passwords.txt", function (data) {
-                var users = data.split("\n").map(function (line) {
-                    var parts = line.split("|");
-                    return {
-                        username: parts[0].trim(),
-                        password: parts[1].trim(),
-                        name: parts[2].trim()
-                    };
-                });
-
-                $("#login-form").submit(function (event) {
-                    event.preventDefault();
-
-                    var username = $("#username").val();
-                    var password = $("#password").val();
-
-                    if (username && password) {
-                        var user = users.find(function (user) {
-                            return user.username === username;
-                        });
-
-                        if (user && user.password === password) {
-                            $("#result").text("Login successful! Welcome " + user.name);
-
-                            setTimeout(function () {
-                                window.location.href = newUrl;
-                            }, 4000);
-                        } else {
-                            $("#result").text("Invalid username or password");
-                        }
-                    } else {
-                        $("#result").text("Please enter both username and password");
-                    }
-                });
-            });
-        });
+    <script> 
+        var newUrl = "https://unblocked76.github.io/happy-wheels/"
+        var users = [
+                { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES" },
+                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
+                { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
+                { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
+                { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES" },
+                { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
+                { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES"},
+                { username: "GuestUser", password: "guest", name: "Guest User | UKN"},
+                { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"}
+                // Add more users as needed
+            ];
     </script>
 
     <title>Login Authentication</title>
@@ -100,51 +73,76 @@
 <body>
     <div class="container">
         <h2>User Authentication</h2>
-        <form id="login-form">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" placeholder="Enter your username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Enter your password">
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-        </form>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+        </div>
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
 
     <script>
-        var urlObj = new window.URL(window.location.href);
 
-        if (newUrl) {
-            var win;
+        function login() {
 
-            document.querySelector('button').onclick = function () {
-                if (win) {
-                    win.focus();
-                } else {
-                    win = window.open();
-                    win.document.body.style.margin = '0';
-                    win.document.body.style.height = '100vh';
-                    var iframe = win.document.createElement('iframe');
-                    iframe.style.border = 'none';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.margin = '0';
-                    iframe.src = newUrl;
-                    win.document.body.appendChild(iframe);
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-                    var interval = setInterval(function () {
-                        if (win.closed) {
-                            clearInterval(interval);
-                            win = undefined;
-                        }
-                    }, 500);
-                }
-            };
+            // Find the user with the matching username
+            var user = users.find(function (user) {
+                return user.username === username;
+            });
+
+            // Check if the user exists and the password is correct
+            if (user && user.password === password) {
+                document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+
+                setTimeout(function () {
+                    window.location.href = newUrl;
+                }, 4000); // Delay of 4 seconds (4000 milliseconds)
+            } else {
+                document.getElementById("result").innerHTML = "Invalid username or password";
+            }
+
+            var urlObj = new window.URL(window.location.href);
+
+            if (newUrl) {
+                var win;
+
+                document.querySelector('button').onclick = function () {
+                    if (win) {
+                        win.focus();
+                    } else {
+                        win = window.open();
+                        win.document.body.style.margin = '0';
+                        win.document.body.style.height = '100vh';
+                        var iframe = win.document.createElement('iframe');
+                        iframe.style.border = 'none';
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.margin = '0';
+                        iframe.src = url;
+                        win.document.body.appendChild(iframe);
+
+
+                        var interval = setInterval(function () {
+                            if (win.closed) {
+                                clearInterval(interval);
+                                win = undefined;
+
+                            }
+                        }, 500);
+
+
+                    }
+                };
+            }
         }
     </script>
 </body>

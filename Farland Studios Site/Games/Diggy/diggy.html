@@ -4,6 +4,18 @@
 <head>
     <script> 
         var newUrl = "https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fdiggy.xml"
+        var users = [
+                { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES" },
+                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
+                { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
+                { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
+                { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES" },
+                { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
+                { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES"},
+                { username: "GuestUser", password: "guest", name: "Guest User | UKN"},
+                { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"}
+                // Add more users as needed
+            ];
     </script>
 
     <title>Login Authentication</title>
@@ -78,18 +90,6 @@
     <script>
 
         function login() {
-            var users = [
-                { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES" },
-                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
-                { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
-                { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
-                { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES" },
-                { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-                { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES"},
-                { username: "GuestUser", password: "guest", name: "Guest User | UKN"},
-                { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"}
-                // Add more users as needed
-            ];
 
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
