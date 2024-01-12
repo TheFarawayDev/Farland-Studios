@@ -29,7 +29,6 @@ The following users are <strong>Banned Permanently or Temporarily</strong>:
 Permanently Banned: 
 <li>Atticus G.</li> 
 <li>Pennie M.</li>
-<li>Brooklyn K.</li>
 
 Temporarily Banned:
 <li>James D.</li>
