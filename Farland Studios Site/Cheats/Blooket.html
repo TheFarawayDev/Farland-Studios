@@ -4,16 +4,13 @@
 <head>
     <script> 
         var newUrl = "https://cdn.jsdelivr.net/gh/TheFarawayDev/Farland-Studios/Farland%20Studios%20Site/Cheats/Blooket.js"
-
-        function login() {
-            var users = [
-                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
+        var users = [
+        { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
                 { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
                 { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
                 { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
                 { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"},
                 { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP"}
-
                 // Add more users as needed
             ];
     </script>
@@ -72,7 +69,7 @@
 
 <body>
     <div class="container">
-        <h2>User Authentication </h2>
+        <h2>User Authentication</h2>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Enter your username">
@@ -88,6 +85,9 @@
     </div>
 
     <script>
+
+        function login() {
+
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
