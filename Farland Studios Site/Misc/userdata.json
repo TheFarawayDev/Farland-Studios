@@ -1,11 +1,62 @@
-{ username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES", status: "active" },
-            { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres.", status: "active" },
-            { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP", status: "active" },
-            { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP", status: "active" },
-            { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES", status: "active" },
-            { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-            { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES", status: "active" },
-            { username: "GuestUser", password: "guest", name: "Guest User | UKN", status: "active" },
-            { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES", status: "active" },
-            { username: "brookieis", password: "acookie", name: "Brooklyn K. | TES", status: "active" },
-            { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP", status: "active" }
+[
+    {
+        "username": "lamegamer2023",
+        "password": "lamegametime",
+        "name": "John Doe | TES",
+        "status": "active"
+    },
+    {
+        "username": "faraway",
+        "password": "Eastwood99!",
+        "name": "Marshall E. | Pres.",
+        "status": "inactive"
+    },
+    {
+        "username": "caybutgame",
+        "password": "caydenstoving",
+        "name": "Cayden B. | VP",
+        "status": "active"
+    },
+    {
+        "username": "peytoninmay",
+        "password": "heyitspeyton",
+        "name": "Peyton P. | TES",
+        "status": "active"
+    },
+    {
+        "username": "titus",
+        "password": "titusisawesome",
+        "name": "Titus A. | TES",
+        "status": "active"
+    },
+    {
+        "username": "agrayday",
+        "password": "turnedbright",
+        "name": "Grayson Hurst | TES",
+        "status": "active"
+    },
+    {
+        "username": "GuestUser",
+        "password": "guest",
+        "name": "Guest User | UKN",
+        "status": "active"
+    },
+    {
+        "username": "onecent",
+        "password": "equalsvincent",
+        "name": "Vincent B. | TES",
+        "status": "active"
+    },
+    {
+        "username": "brookieis",
+        "password": "acookie",
+        "name": "Brooklyn K. | TES",
+        "status": "active"
+    },
+    {
+        "username": "buyadesk",
+        "password": "andgetonefree",
+        "name": "James D. | VIP",
+        "status": "active"
+    }
+]

@@ -90,30 +90,30 @@
     </div>
     <script>
         async function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-    var response = await fetch('');
-    var users = await response.json();
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var users = await response.json();
 
-    var user = users.find(function (user) {
-        return user.username === username;
-    });
+            var user = users.find(function (user) {
+                return user.username === username;
+            });
 
-    if (user && user.password === password) {
-        if (user.status === "active") {
-            document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-            setTimeout(function () {
-                window.location.href = newUrl;
-            }, 4000);
-        } else if (user.status === "inactive") {
-            document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
-        } else {
-            document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
-        }
-    } else {
-        document.getElementById("result").innerHTML = "Invalid username or password";
-    }
+            if (user && user.password === password) {
+                if (user.status === "active") {
+                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                    setTimeout(function () {
+                        window.location.href = newUrl;
+                    }, 4000);
+                } else if (user.status === "inactive") {
+                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Invalid username or password";
+            }
       }
     </script>
 </body>
