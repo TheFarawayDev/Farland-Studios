@@ -58,5 +58,11 @@
         "password": "andgetonefree",
         "name": "James D. | VIP",
         "status": "active"
+    },
+    {
+        "username": "jayman",
+        "password": "istheman",
+        "name": "Jalen H | VIP",
+        "status": "active"
     }
 ]
