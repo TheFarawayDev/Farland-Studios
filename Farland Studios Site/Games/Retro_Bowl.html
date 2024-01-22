@@ -2,21 +2,7 @@
 <html>
 <head>
     <script>
-        var newUrl = "https://unblocked76.github.io/retro-bowl/"
-        var users = [
-            { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES", status: "active" },
-            { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres.", status: "active" },
-            { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP", status: "active" },
-            { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP", status: "inactive" },
-            { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES", status: "active" },
-            { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-            { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES", status: "active" },
-            { username: "GuestUser", password: "guest", name: "Guest User | UKN", status: "active" },
-            { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES", status: "active" },
-            { username: "brookieis", password: "acookie", name: "Brooklyn K. | TES", status: "active" },
-            { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP", status: "active" }
-            // Add more users as needed
-        ];
+        var newUrl = "https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml"
     </script>
 
     <title>Login Authentication</title>
@@ -89,32 +75,35 @@
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
     <script>
-        function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+        async function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-        var user = users.find(function (user) {
-            return user.username === username;
-        });
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var users = await response.json();
 
-        if (user && user.password === password) {
-            if (user.status === "active") {
-                document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-                setTimeout(function () {
-                    window.location.href = newUrl;
-                }, 4000);
-            } else if (user.status === "inactive") {
-                document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
-            } else if (user.status === "pending") {
-                document.getElementById("result").innerHTML = "Your account is pending approval. Please contact support.";
-            } else if (user.status === "suspended") {
-                document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
+            var user = users.find(function (user) {
+                return user.username === username;
+            });
+
+            if (user && user.password === password) {
+                if (user.status === "active") {
+                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                    setTimeout(function () {
+                        window.location.href = newUrl;
+                    }, 4000);
+                } else if (user.status === "inactive") {
+                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else if (user.status === "pending") {
+                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
+                } else if (user.status === "suspended") {
+                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                }
             } else {
-                document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                document.getElementById("result").innerHTML = "Invalid username or password";
             }
-        } else {
-            document.getElementById("result").innerHTML = "Invalid username or password";
-        }
       }
     </script>
 </body>

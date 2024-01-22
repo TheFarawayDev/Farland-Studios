@@ -1,23 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <script> 
+    <script>
         var newUrl = "https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fdiggy.xml"
-        var users = [
-        { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES" },
-                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },      
-                { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
-                { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
-                { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES" },
-                { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-                { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES"},
-                { username: "GuestUser", password: "guest", name: "Guest User | UKN"},
-                { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"},
-                { username: "brookieis", password: "acookie", name: "Brooklyn K. | TES"},
-                { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP"}
-                // Add more users as needed
-            ];
     </script>
 
     <title>Login Authentication</title>
@@ -63,7 +48,8 @@
             padding: 10px;
             background-color: #099bbf;
             color: rgb(255, 255, 255);
-            border: 2px solid #000000; /* Added border */
+            border: 2px solid #000000;
+            /* Added border */
             border-radius: 3px;
             cursor: pointer;
             font-family: inherit;
@@ -88,65 +74,37 @@
         </div>
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
-
     <script>
-
-        function login() {
-
+        async function login() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            // Find the user with the matching username
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var users = await response.json();
+
             var user = users.find(function (user) {
                 return user.username === username;
             });
 
-            // Check if the user exists and the password is correct
             if (user && user.password === password) {
-                document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-
-                setTimeout(function () {
-                    window.location.href = newUrl;
-                }, 4000); // Delay of 4 seconds (4000 milliseconds)
+                if (user.status === "active") {
+                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                    setTimeout(function () {
+                        window.location.href = newUrl;
+                    }, 4000);
+                } else if (user.status === "inactive") {
+                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else if (user.status === "pending") {
+                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
+                } else if (user.status === "suspended") {
+                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                }
             } else {
                 document.getElementById("result").innerHTML = "Invalid username or password";
             }
-
-            var urlObj = new window.URL(window.location.href);
-
-            if (newUrl) {
-                var win;
-
-                document.querySelector('button').onclick = function () {
-                    if (win) {
-                        win.focus();
-                    } else {
-                        win = window.open();
-                        win.document.body.style.margin = '0';
-                        win.document.body.style.height = '100vh';
-                        var iframe = win.document.createElement('iframe');
-                        iframe.style.border = 'none';
-                        iframe.style.width = '100%';
-                        iframe.style.height = '100%';
-                        iframe.style.margin = '0';
-                        iframe.src = url;
-                        win.document.body.appendChild(iframe);
-
-
-                        var interval = setInterval(function () {
-                            if (win.closed) {
-                                clearInterval(interval);
-                                win = undefined;
-
-                            }
-                        }, 500);
-
-
-                    }
-                };
-            }
-        }
+      }
     </script>
 </body>
-
 </html>

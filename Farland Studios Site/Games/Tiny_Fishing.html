@@ -2,21 +2,7 @@
 <html>
 <head>
     <script>
-        var newUrl = "https://unblocked76.github.io/tiny-fishing/"
-        var users = [
-            { username: "lamegamer2023", password: "lamegametime", name: "John Doe | TES", status: "active" },
-            { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres.", status: "active" },
-            { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP", status: "active" },
-            { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP", status: "inactive" },
-            { username: "peytoninmay", password: "heyitspeyton", name: "Peyton P. | TES", status: "active" },
-            { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-            { username: "agrayday", password: "turnedbright", name: "Grayson Hurst | TES", status: "active" },
-            { username: "GuestUser", password: "guest", name: "Guest User | UKN", status: "active" },
-            { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES", status: "active" },
-            { username: "brookieis", password: "acookie", name: "Brooklyn K. | TES", status: "active" },
-            { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP", status: "active" }
-            // Add more users as needed
-        ];
+        var newUrl = "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://72682389-756457502729861133.preview.editmysite.com/uploads/b/11886820-896015480911618794/files/tf.xml"
     </script>
 
     <title>Login Authentication</title>
@@ -108,6 +94,10 @@
                     }, 4000);
                 } else if (user.status === "inactive") {
                     document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else if (user.status === "pending") {
+                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
+                } else if (user.status === "suspended") {
+                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
                 } else {
                     document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
                 }
