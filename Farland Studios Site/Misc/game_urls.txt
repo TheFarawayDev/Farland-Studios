@@ -24,6 +24,19 @@ https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws
 Diggy | Gold Rush
 https://www.coolmathgames.com/sites/default/files/public_games/48535/
 
+Duck Life
+Duck Life | 1
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/vue-tables-2@1b8b48a642e410d2e3db5f04deb7cf3fec30c513/lib/dl1.xml
+
+Duck Life | 2
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@f5922fae305916c82f1c74e11fecdcc097755476/scripts/dl2.xml
+
+Duck Life | 3
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/learning-Python-3@c4e9b8674140aaedb18b0546400d6f6ac5b34949/scripts/dl3.xml
+
+Duck Life | 4
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fduck-life-4.xml
+
 FNAF | 1
 https://sussygamedeveloper.github.io/FNAF1/
 
@@ -35,6 +48,9 @@ https://gba-9bvs.vercel.app/
 
 Happy Wheels
 https://sreekar617.github.io/hw/index.html
+
+House Of Hazards
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/version@a82a865ade551e9ad9a3afa00ec8ccd86bbd40a3/house-of-hazards.xml
 
 .IO Games
 Paper.io 2

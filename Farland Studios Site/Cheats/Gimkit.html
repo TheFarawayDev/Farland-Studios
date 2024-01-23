@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <script> 
+    <script>
         var newUrl = "https://cdn.jsdelivr.net/gh/TheFarawayDev/Farland-Studios/Farland%20Studios%20Site/Cheats/Gimkit.js"
     </script>
 
@@ -49,7 +48,8 @@
             padding: 10px;
             background-color: #099bbf;
             color: rgb(255, 255, 255);
-            border: 2px solid #000000; /* Added border */
+            border: 2px solid #000000;
+            /* Added border */
             border-radius: 3px;
             cursor: pointer;
             font-family: inherit;
@@ -60,9 +60,8 @@
 
 <body>
     <div class="container">
-        <h2>User Authentication </h2>
-        <h4>Not Guarenteed To Work!</h4>
-        <p>Go to Gimkit.com then paste code!</p>
+        <h2>User Authentication</h2>
+        <h3>May Not Work</h3>
         <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" placeholder="Enter your username">
@@ -76,74 +75,37 @@
         </div>
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
-
     <script>
-
-        function login() {
-            var users = [
-                { username: "faraway", password: "Eastwood99!", name: "Marshall E. | Pres." },
-                { username: "joshhasagosh", password: "ohmygosh", name: "Joshua B. | NAZI-VIP" },
-                { username: "titus", password: "titusisawesome", name: "Titus A. | TES" },
-                { username: "caybutgame", password: "caydenstoving", name: "Cayden B. | VP" },
-                { username: "onecent", password: "equalsvincent", name: "Vincent B. | TES"},
-                { username: "buyadesk", password: "andgetonefree", name: "James D. | VIP"}
-                // Add more users as needed
-            ];
-
+        async function login() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            // Find the user with the matching username
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata_cheats.json');
+            var users = await response.json();
+
             var user = users.find(function (user) {
                 return user.username === username;
             });
 
-            // Check if the user exists and the password is correct
             if (user && user.password === password) {
-                document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-
-                setTimeout(function () {
-                    window.location.href = newUrl;
-                }, 4000); // Delay of 4 seconds (4000 milliseconds)
+                if (user.status === "active") {
+                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                    setTimeout(function () {
+                        window.location.href = newUrl;
+                    }, 4000);
+                } else if (user.status === "inactive") {
+                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else if (user.status === "pending") {
+                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
+                } else if (user.status === "suspended") {
+                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                }
             } else {
                 document.getElementById("result").innerHTML = "Invalid username or password";
             }
-
-            var urlObj = new window.URL(window.location.href);
-
-            if (newUrl) {
-                var win;
-
-                document.querySelector('button').onclick = function () {
-                    if (win) {
-                        win.focus();
-                    } else {
-                        win = window.open();
-                        win.document.body.style.margin = '0';
-                        win.document.body.style.height = '100vh';
-                        var iframe = win.document.createElement('iframe');
-                        iframe.style.border = 'none';
-                        iframe.style.width = '100%';
-                        iframe.style.height = '100%';
-                        iframe.style.margin = '0';
-                        iframe.src = url;
-                        win.document.body.appendChild(iframe);
-
-
-                        var interval = setInterval(function () {
-                            if (win.closed) {
-                                clearInterval(interval);
-                                win = undefined;
-
-                            }
-                        }, 500);
-
-
-                    }
-                };
-            }
-        }
+      }
     </script>
 </body>
-
 </html>
