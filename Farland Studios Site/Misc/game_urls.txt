@@ -17,14 +17,14 @@ https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazo
 Cookie Clicker
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml
 
-Diggy
+Diggy Games
 Diggy | Original
 https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Fdiggy.xml
     
 Diggy | Gold Rush
 https://www.coolmathgames.com/sites/default/files/public_games/48535/
 
-Duck Life
+Duck Life Games
 Duck Life | 1
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/vue-tables-2@1b8b48a642e410d2e3db5f04deb7cf3fec30c513/lib/dl1.xml
 
@@ -61,9 +61,23 @@ Infectanator | World Domination
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Finfectonator-world-dominator.xml
 
 Infectanator | 2
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/f107b843-3661-4036-9397-2b0c6414a369%2Finfectonator-2.xml
 
 Jacksmith
 https://www.coolmathgames.com/sites/default/files/public_games/49634/
+
+Learn To Fly Games
+Learn To Fly | 1
+https://www.coolmathgames.com/sites/default/files/public_games/50509/
+
+Learn To Fly | 2
+https://www.coolmathgames.com/sites/default/files/public_games/50678/
+
+Learn To Fly | 3
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Flearn-to-fly-3.xml
+
+Learn To Fly | Idle
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Flearn-to-fly-idle.xml
 
 Minecraft (Eaglercraft)
 https://mopnop.github.io/eaglercraft-singleplayer/
