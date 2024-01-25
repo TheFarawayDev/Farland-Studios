@@ -79,7 +79,7 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata_restrict.json');
             var users = await response.json();
 
             var user = users.find(function (user) {
