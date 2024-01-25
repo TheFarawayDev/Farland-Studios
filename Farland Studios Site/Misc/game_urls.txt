@@ -108,6 +108,16 @@ https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://31857302
 Moto X3M | Winter
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@ef23f79324c37921a9e7e53dadd30c9721235820/build/m3mw/m3mw.xml
 
+Pokemon
+Pokemon Emerald
+https://gba-9bvs.vercel.app/launcher.html#pokemonemerald
+
+Pokemon Ruby
+https://gba-9bvs.vercel.app/launcher.html#pokemonruby
+
+Pokemon Sapphire
+https://gba-9bvs.vercel.app/launcher.html#pokemonsapphire
+
 Retro Bowl
 https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml
 
