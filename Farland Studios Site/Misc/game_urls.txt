@@ -43,8 +43,15 @@ https://sussygamedeveloper.github.io/FNAF1/
 FNAF | 2
 https://sussygamedeveloper.github.io/FNAF2/
 
+GBA
 GBA Emulator
 https://gba-9bvs.vercel.app/
+
+Doom | 1
+https://gba-9bvs.vercel.app/launcher.html#dm
+
+Doom | 2
+https://gba-9bvs.vercel.app/launcher.html#dm2
 
 Happy Wheels
 https://sreekar617.github.io/hw/index.html
