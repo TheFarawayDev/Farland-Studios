@@ -3,7 +3,7 @@
 <head>
     <script>
         var newUrl = "https://gba-9bvs.vercel.app/launcher.html#dm2"
-        var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Doom/Doom_2.html"
+        var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/GBA/Doom/Doom_2.html"
         function openGame() {
             var win = window.open();
             var url = fullUrl;
@@ -93,6 +93,7 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
+            // Use the fetch function to make the HTTP request
             var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
             var users = await response.json();
 
