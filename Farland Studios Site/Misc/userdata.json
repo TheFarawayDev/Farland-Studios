@@ -64,5 +64,11 @@
         "password": "istheman",
         "name": "Jalen H | VIP",
         "status": "active"
-    }
+    },
+    {
+        "username": "joshua",
+        "password": "washere",
+        "name": "Joshua B. | VIP",
+        "status": "active"
+    },
 ]
