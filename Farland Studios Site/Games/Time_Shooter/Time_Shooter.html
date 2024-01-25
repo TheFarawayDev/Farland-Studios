@@ -3,6 +3,17 @@
 <head>
     <script>
         var newUrl = "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/element@1dd0b99d2004b84795f2745a5eb3468deb1c38a4/ts2.xml"
+        var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Time_Shooter/Time_Shooter.html"
+        function openGame() {
+            var win = window.open();
+            var url = fullUrl;
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
     </script>
 
     <title>Login Authentication</title>
@@ -72,6 +83,9 @@
         <div class="form-group">
             <button onclick="login()">Login</button>
         </div>
+        <div class="form-group">
+            <button style="display: block !important;" onclick="openGame()">Play in Fullscreen</button>
+        </div>
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
     <script>
@@ -79,7 +93,7 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata_restrict.json');
             var users = await response.json();
 
             var user = users.find(function (user) {
