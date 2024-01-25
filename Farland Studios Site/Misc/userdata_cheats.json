@@ -40,5 +40,11 @@
         "password": "istheman",
         "name": "Jalen H | VIP",
         "status": "active"
+    },
+    {
+        "username": "brookieis",
+        "password": "acookie",
+        "name": "Brooklyn K. | TES",
+        "status": "active"
     }
 ]
