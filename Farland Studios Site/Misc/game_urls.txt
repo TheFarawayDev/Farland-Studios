@@ -122,6 +122,12 @@ Retro Bowl
 https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml
 
 Run Games
+Run | 1
+https://www.coolmathgames.com/sites/default/files/public_games/35975/
+
+Run | 2
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Frun2.xml
+
 Run | 3
 www.coolmathgames.com/sites/default/files/public_games/49436/
 
@@ -139,6 +145,9 @@ https://www.coolmathgames.com/sites/default/files/public_games/50679/
 
 Territorial
 https://clockmantellstime.github.io/unblocked/territorial.html
+
+The Binding Of Issac
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fthe-binding-of-isaac.xml
 
 The Final Earth Series
 The Final Earth (TFE)
