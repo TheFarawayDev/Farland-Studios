@@ -122,6 +122,13 @@ https://gba-9bvs.vercel.app/launcher.html#pokemonruby
 Pokemon Sapphire
 https://gba-9bvs.vercel.app/launcher.html#pokemonsapphire
 
+Raft Wars Games
+Raft Wars 1
+
+
+Raft Wars 2
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fraft-wars-2.xml
+
 Retro Bowl
 https://book-opensocial.googleusercontent.com/gadgets/ifr?url=https://274079163-174037128449362058.preview.editmysite.com/uploads/b/139890129-899796311729593176/files/rtbl.xml
 
@@ -133,7 +140,7 @@ Run | 2
 https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Frun2.xml
 
 Run | 3
-www.coolmathgames.com/sites/default/files/public_games/49436/
+https://www.coolmathgames.com/sites/default/files/public_games/49436/
 
 Shapez.io
 https://www.coolmathgames.com/sites/default/files/public_games/38820/
