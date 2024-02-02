@@ -27,13 +27,13 @@
         "username": "titus",
         "password": "titusisawesome",
         "name": "Titus A. | TES",
-        "status": "suspended"
+        "status": "active"
     },
     {
         "username": "agrayday",
         "password": "turnedbright",
         "name": "Grayson Hurst | TES",
-        "status": "active"
+        "status": "suspended"
     },
     {
         "username": "GuestUser",
