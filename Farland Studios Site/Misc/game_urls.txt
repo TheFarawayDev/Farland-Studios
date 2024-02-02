@@ -151,6 +151,9 @@ https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsde
 Snow Rider
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/mind4ur/debugactions@6e97a528bfcdd0623e0cd99ad352baebf47a6b70/sr3d2.xml
 
+Stickman Dismount
+https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/RuntimeInspectorUnity@8f1639f27e7cb407525c6b40251bb2750cc6013c/Skins/stdist.xml
+
 Suika (Watermelon Game)
 https://www.coolmathgames.com/sites/default/files/public_games/50679/
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var newUrl = "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/RuntimeInspectorUnity@8f1639f27e7cb407525c6b40251bb2750cc6013c/Skins/stdist.xml"
+        var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Stickman_Dismount.html"
+        function openGame() {
+            var win = window.open();
+            var url = fullUrl;
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+    </script>
+
+    <title>Login Authentication</title>
+    <style>
+        /* CSS styles for the login form */
+
+        @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+
+        body {
+            font-family: 'VCR OSD Mono', monospace;
+            font-size: 110%;
+            /* Increased font size by 10% */
+        }
+
+        .container {
+            width: 800px;
+            /* Updated width to make the login box 2x bigger */
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #099bbf;
+            color: rgb(255, 255, 255);
+            border: 2px solid #000000;
+            /* Added border */
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>User Authentication</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="form-group">
+            <button style="display: block !important;" onclick="openGame()">Play in Fullscreen</button>
+        </div>
+        <div id="result"></div> <!-- Added a div to display the result -->
+    </div>
+    <script>
+        async function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
+            var users = await response.json();
+
+            var user = users.find(function (user) {
+                return user.username === username;
+            });
+
+            if (user && user.password === password) {
+                if (user.status === "active") {
+                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                    setTimeout(function () {
+                        window.location.href = newUrl;
+                    }, 4000);
+                } else if (user.status === "inactive") {
+                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
+                } else if (user.status === "pending") {
+                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
+                } else if (user.status === "suspended") {
+                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
+                } else {
+                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                }
+            } else {
+                document.getElementById("result").innerHTML = "Invalid username or password";
+            }
+      }
+    </script>
+</body>
+</html>
