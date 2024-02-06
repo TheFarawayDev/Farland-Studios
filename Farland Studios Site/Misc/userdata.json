@@ -70,5 +70,11 @@
         "password": "washere",
         "name": "Joshua B. | VIP",
         "status": "active"
+    },
+    {
+        "username": "bigwiggle",
+        "password": "leg359ncs",
+        "name": "Ember M. | VIP",
+        "status": "active"
     }
 ]
