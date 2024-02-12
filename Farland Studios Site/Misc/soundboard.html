@@ -1,124 +1,136 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script>
-        var newUrl = "https://scratch.mit.edu/projects/961631894/embed"
-        var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/soundboard.html"
-        function openGame() {
-            var win = window.open();
-            var url = fullUrl;
-            var iframe = win.document.createElement('iframe');
-            iframe.style.width = "100%";
-            iframe.style.height = "100%";
-            iframe.style.border = "none";
-            iframe.src = url;
-            win.document.body.appendChild(iframe);
-        }
-    </script>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
 
-    <title>Login Authentication</title>
-    <style>
-        /* CSS styles for the login form */
+    body {
+        background-color: #0057C2;
+        margin: 0;
+        padding: 0;
+        border: 4px solid black;
+    }
 
-        @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+    .header {
+        background-color: #00469C;
+        color: white;
+        padding: 20px;
+        text-align: left; /* Align the header text to the left */
+        font-size: 24px;
+        font-family: 'VCR OSD Mono', monospace;
+        margin-bottom:-1px;
+        border: 4px solid black; /* Add a black outline to the header */
+    }
 
-        body {
-            font-family: 'VCR OSD Mono', monospace;
-            font-size: 110%;
-            /* Increased font size by 10% */
-        }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
+        grid-gap: 1px; /* Add spacing between each grid item */
+        padding: 6.5px; /* Add 5px padding around the grid */
+    }
 
-        .container {
-            width: 800px;
-            /* Updated width to make the login box 2x bigger */
-            margin: 0 auto;
-            padding: 20px;
-            border: 2px solid #000000;
-            border-radius: 8px;
-            background-color: white;
-        }
 
-        .form-group {
-            margin-bottom: 10px;
-        }
+    .grid-item {
+        width: 100px;
+        height: 100px;
+        border: 4px solid black;
+        background-color: lightblue;
+        font-family: 'VCR OSD Mono', monospace; /* Set the font for the buttons */
+        margin-top: 5px;
+    }
+</style>
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-        }
+<div class="header">
+    <span id="leftArrow" style="cursor: pointer;">«</span>
+    <span id="pageNumber">Ultimate Soundboard (Page 1)</span>
+    <span id="rightArrow" style="cursor: pointer;">»</span>
+</div>
 
-        .form-group input {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #099bbf;
-            color: rgb(255, 255, 255);
-            border: 2px solid #000000;
-            /* Added border */
-            border-radius: 3px;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: inherit;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h2>User Authentication</h2>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Enter your username">
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password">
-        </div>
-        <div class="form-group">
-            <button onclick="login()">Login</button>
-        </div>
-        <div class="form-group">
-            <button style="display: block !important;" onclick="openGame()">Play in Fullscreen</button>
-        </div>
-        <div id="result"></div> <!-- Added a div to display the result -->
+<div class="grid-container">
+    <div id="page1" class="page">
+        <button class="grid-item" onclick="script1()">Among Us - Emergency</button>
+        <button class="grid-item" onclick="script2()">Emotional Damage</button>
+        <button class="grid-item" onclick="script3()">Among Us - Role Reveal</button>
+        <button class="grid-item" onclick="script4()">Android Notification</button>
+        <button class="grid-item" onclick="script1()">Button 1</button>
+        <button class="grid-item" onclick="script2()">Button 2</button>
+        <button class="grid-item" onclick="script1()">Button 1</button>
+        <button class="grid-item" onclick="script2()">Button 2</button>
     </div>
-    <script>
-        async function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+    <div id="page2" class="page" style="display: none;">
+        <button class="grid-item" onclick="script3()">Button 1</button>
+        <button class="grid-item" onclick="script4()">Button 2</button>
+    </div>
+    <!-- Repeat for more pages as needed -->
+</div>
 
-            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
-            var users = await response.json();
+<script>
+    var currentPage = 1; // Variable to keep track of the current page
 
-            var user = users.find(function (user) {
-                return user.username === username;
-            });
+    function script1() {
+        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true');
+        audio.play();
+    }
 
-            if (user && user.password === password) {
-                if (user.status === "active") {
-                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-                    setTimeout(function () {
-                        window.location.href = newUrl;
-                    }, 4000);
-                } else if (user.status === "inactive") {
-                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
-                } else if (user.status === "pending") {
-                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
-                } else if (user.status === "suspended") {
-                    document.getElementById("result").innerHTML = "Your account is suspended. Please contact support.";
-                } else {
-                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
-                }
-            } else {
-                document.getElementById("result").innerHTML = "Invalid username or password";
-            }
-      }
-    </script>
-</body>
-</html>
+    function script2() {
+        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true');
+        audio.play();
+    }
+
+    function script3() {
+        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true');
+        audio.play();
+    }
+
+    function script4() {
+        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true');
+        audio.play();
+    }
+
+    function script5() {
+        // Add your script for Button 5 here
+    }
+
+    function script6() {
+        // Add your script for Button 6 here
+    }
+
+    function script7() {
+        // Add your script for Button 7 here
+    }
+
+    function script8() {
+        // Add your script for Button 8 here
+    }
+
+ // Function to handle the arrow clicks
+function handleArrowClick(direction) {
+    // Determine the new page number
+    if (direction === 'left' && currentPage > 1) {
+        currentPage--;
+    } else if (direction === 'right') {
+        // Replace '2' with the total number of pages
+        if (currentPage < 2) {
+            currentPage++;
+        }
+    }
+
+    // Hide all pages
+    var pages = document.getElementsByClassName('page');
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
+
+    // Show the current page
+    document.getElementById('page' + currentPage).style.display = 'block';
+
+    // Update the page number display
+    document.getElementById('pageNumber').textContent = 'Ultimate Soundboard (Page ' + currentPage + ')';
+}
+
+    // Add event listeners to the arrow elements
+    document.getElementById('leftArrow').addEventListener('click', function() {
+        handleArrowClick('left');
+    });
+
+    document.getElementById('rightArrow').addEventListener('click', function() {
+        handleArrowClick('right');
+    });
+</script>
