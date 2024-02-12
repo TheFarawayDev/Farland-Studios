@@ -1,3 +1,6 @@
+Ahoy Survival
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/gertdoro/UnityExplorer@bb8f4595bd538d662c055a6e8effa1c8ce9e0a5e/ObjectExplorer/Ahoy.xml
+
 Bitlife
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/sk1bx/awesome-aws@37c682c65a5a4c1ddc5b5ff2b840924526f209b4/scripts/blf.xml
 
@@ -13,6 +16,12 @@ https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazo
 
 Bloons TD | 3
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fbloons-td-3.xml
+
+Cell Machine
+https://gg-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/RobiFet/Platform@cb06d3c7104d2159657b323fe9530ab25eeb388a/spec/cell-machine.xml
+
+Choppy Orc
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://googleusercontent.b-cdn.net/choppy-orc/cho.xml
 
 Cookie Clicker
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@0d9afabd2522344a702e1b692ad58039f6290b0d/build/c-c/cc.xml
@@ -37,21 +46,21 @@ https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsde
 Duck Life | 4
 https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fduck-life-4.xml
 
+Earth Taken Series
+Earth Taken | 1
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fearth-taken.xml
+
+Earth Taken | 2
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fearth-taken-2.xml
+
+Earth Taken | 3
+https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fearth-taken-3.xml
+
 FNAF | 1
 https://sussygamedeveloper.github.io/FNAF1/
 
 FNAF | 2
 https://sussygamedeveloper.github.io/FNAF2/
-
-GBA
-GBA Emulator
-https://gba-9bvs.vercel.app/
-
-Doom | 1
-https://gba-9bvs.vercel.app/launcher.html#dm
-
-Doom | 2
-https://gba-9bvs.vercel.app/launcher.html#dm2
 
 Happy Wheels
 https://sreekar617.github.io/hw/index.html
@@ -108,23 +117,8 @@ https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://31857302
 Moto X3M | Winter
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@ef23f79324c37921a9e7e53dadd30c9721235820/build/m3mw/m3mw.xml
 
-Pacman Games
-Pacman Collection
-https://gba-9bvs.vercel.app/launcher.html#pmc
-
-Pokemon
-Pokemon Emerald
-https://gba-9bvs.vercel.app/launcher.html#pokemonemerald
-
-Pokemon Ruby
-https://gba-9bvs.vercel.app/launcher.html#pokemonruby
-
-Pokemon Sapphire
-https://gba-9bvs.vercel.app/launcher.html#pokemonsapphire
-
 Raft Wars Games
 Raft Wars 1
-
 
 Raft Wars 2
 https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fraft-wars-2.xml
