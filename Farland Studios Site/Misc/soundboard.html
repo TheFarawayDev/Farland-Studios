@@ -47,8 +47,8 @@
     <div id="page1" class="page">
         <button class="grid-item" onclick="script1()">Among Us - Emergency</button>
         <button class="grid-item" onclick="script2()">Emotional Damage</button>
-        <button class="grid-item" onclick="script3()">Among Us - Role Reveal</button>
-        <button class="grid-item" onclick="script4()">Android Notification</button>
+        <button class="grid-item" onclick="script3()">Among Us - Role</button>
+        <button class="grid-item" onclick="script4()">Android Notify</button>
         <button class="grid-item" onclick="script1()">Button 1</button>
         <button class="grid-item" onclick="script2()">Button 2</button>
         <button class="grid-item" onclick="script1()">Button 1</button>
@@ -63,25 +63,46 @@
 
 <script>
     var currentPage = 1; // Variable to keep track of the current page
+    var audio = null; // Variable to keep track of the currently playing audio
+
+    function disableButtons() {
+        var buttons = document.getElementsByClassName('grid-item');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+
+    function enableButtons() {
+        var buttons = document.getElementsByClassName('grid-item');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }
+
+    function playSound(url) {
+        if (audio) {
+            audio.pause();
+        }
+        audio = new Audio(url);
+        disableButtons();
+        audio.onended = enableButtons;
+        audio.play();
+    }
 
     function script1() {
-        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true');
-        audio.play();
+        playSound('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true');
     }
 
     function script2() {
-        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true');
-        audio.play();
+        playSound('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true');
     }
 
     function script3() {
-        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true');
-        audio.play();
+        playSound('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true');
     }
 
     function script4() {
-        var audio = new Audio('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true');
-        audio.play();
+        playSound('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true');
     }
 
     function script5() {
