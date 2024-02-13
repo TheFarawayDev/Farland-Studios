@@ -20,24 +20,23 @@
     }
 
     .grid-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
-        grid-gap: 1px; /* Add spacing between each grid item */
-        padding: 6.5px; /* Add 5px padding around the grid */
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fill, auto-fill);
+    gap: 10px;
+    margin: 5px; /* Add a top margin */
+}
 
-
-    .grid-item {
-        width: 100px;
-        height: 100px;
-        border: 4px solid black;
-        background-color: lightblue;
-        font-family: 'VCR OSD Mono', monospace; /* Set the font for the buttons */
-        margin-top: 5px;
-        font-size: 13px;
-        text-align: center; /* Center the text horizontally */
-        line-height: 10px; /* Center the text vertically */
-    }
+.grid-item {
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+    background-color: lightblue;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-top: 5px;
+}
 
 </style>
 
@@ -49,6 +48,14 @@
 
 <div class="grid-container">
     <div id="page1" class="page">
+        <button id="button1" class="grid-item" onclick="script1()">Among Us - Emergency</button>
+        <button id="button2" class="grid-item" onclick="script2()">Emotional Damage</button>
+        <button id="button3" class="grid-item" onclick="script3()">Among Us - Role</button>
+        <button id="button4" class="grid-item" onclick="script4()">Android Notify</button>
+        <button id="button5" class="grid-item" onclick="script5()">Black OPS</button>
+        <button id="button6" class="grid-item" onclick="script6()">DAMN</button>
+        <button id="button7" class="grid-item" onclick="script7()">E</button>
+        <button id="button8" class="grid-item" onclick="script8()">EA Sports</button>
         <button id="button1" class="grid-item" onclick="script1()">Among Us - Emergency</button>
         <button id="button2" class="grid-item" onclick="script2()">Emotional Damage</button>
         <button id="button3" class="grid-item" onclick="script3()">Among Us - Role</button>
@@ -83,61 +90,40 @@
         }
     }
 
-    var audio = null;
-    var sounds = {};
+    var sounds = [
+    { id: 'button1', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true' },
+    { id: 'button2', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true' },
+    { id: 'button3', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true' },
+    { id: 'button4', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true' },
+    { id: 'button5', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Lethal_Mine_Trigger.mp3?raw=true' },
+    { id: 'button6', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Lethal_Mine_Explosion.mp3?raw=true' },
+    { id: 'button7', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true' },
+    { id: 'button8', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true' },
+    // Add more sounds as needed...
+    ];
 
-    fetch('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/sounds.json?raw=true')
-        .then(response => response.json())
-        .then(data => {
-            sounds = data;
-            for (var key in sounds) {
-                sounds[key].audio = new Audio(sounds[key].path);
-            }
+    var audio = null; // Variable to keep track of the currently playing audio
 
-            // Move the event listeners here
-            document.getElementById('button1').addEventListener('click', function() {
-                if (audio) {
-                    audio.pause();
-                }
-                audio = sounds['button1'].audio;
-                Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
-                audio.onended = function() {
-                    Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
-                };
-                audio.play();
-            });
+    sounds.forEach(sound => {
+    sound.audio = new Audio(sound.path);
+    var button = document.getElementById(sound.id);
+    button.addEventListener('click', function() {
+        if (audio) {
+            audio.currentTime = 0; // Stop the audio
+            audio.pause();
+        }
+        audio = sound.audio;
+        audio.play();
 
-            document.getElementById('button2').addEventListener('click', function() {
-                if (audio) {
-                    audio.pause();
-                }
-                audio = sounds['button2'].audio;
-                Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
-                audio.onended = function() {
-                    Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
-                };
-                audio.play();
-            });
+        // Disable the button
+        button.disabled = true;
 
-            // Add more event listeners for the other buttons...
-        });
-
-    // Assuming you have loaded your sounds into a sounds object
-    var sounds = {
-        "button1": new Audio('sounds/sound1.mp3'),
-        "button2": new Audio('sounds/sound2.mp3'),
-        // More sounds...
-    };
-
-    // Define the script1 function to play the sound for button1
-    function script1() {
-        sounds['button1'].play();
-    }
-
-    // Define the script2 function to play the sound for button2
-    function script2() {
-        sounds['button2'].play();
-    }
+        // Re-enable the button after a delay
+        setTimeout(function() {
+            button.disabled = false;
+        }, 1000); // Adjust the delay as needed
+    });
+});
 
 // More script functions...
 
