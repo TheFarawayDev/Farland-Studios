@@ -1,4 +1,10 @@
 {
-    "button1": "https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true",
-    "button2": "https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true"
+    "button1": {
+        "path": "https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true",
+        "audio": null
+    },
+    "button2": {
+        "path": "sounds/sound2.mp3",
+        "audio": null
+    }
 }

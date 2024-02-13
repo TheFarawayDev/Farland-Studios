@@ -34,7 +34,11 @@
         background-color: lightblue;
         font-family: 'VCR OSD Mono', monospace; /* Set the font for the buttons */
         margin-top: 5px;
+        font-size: 13px;
+        text-align: center; /* Center the text horizontally */
+        line-height: 10px; /* Center the text vertically */
     }
+
 </style>
 
 <div class="header">
@@ -81,35 +85,61 @@
 
     var audio = null;
     var sounds = {};
-    var JSON = ""
 
-    fetch('sounds.json')
+    fetch('https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/sounds.json?raw=true')
         .then(response => response.json())
-        .then(data => sounds = data);
+        .then(data => {
+            sounds = data;
+            for (var key in sounds) {
+                sounds[key].audio = new Audio(sounds[key].path);
+            }
 
-    document.getElementById('button1').addEventListener('click', function() {
-        if (audio) {
-            audio.pause();
-        }
-        audio = new Audio(sounds['button1']);
-        Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
-        audio.onended = function() {
-            Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
-        };
-        audio.play();
-    });
+            // Move the event listeners here
+            document.getElementById('button1').addEventListener('click', function() {
+                if (audio) {
+                    audio.pause();
+                }
+                audio = sounds['button1'].audio;
+                Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
+                audio.onended = function() {
+                    Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
+                };
+                audio.play();
+            });
 
-    document.getElementById('button2').addEventListener('click', function() {
-        if (audio) {
-            audio.pause();
-        }
-        audio = new Audio(sounds['button2']);
-        Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
-        audio.onended = function() {
-            Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
-        };
-        audio.play();
-    });
+            document.getElementById('button2').addEventListener('click', function() {
+                if (audio) {
+                    audio.pause();
+                }
+                audio = sounds['button2'].audio;
+                Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = true);
+                audio.onended = function() {
+                    Array.from(document.getElementsByClassName('grid-item')).forEach(button => button.disabled = false);
+                };
+                audio.play();
+            });
+
+            // Add more event listeners for the other buttons...
+        });
+
+    // Assuming you have loaded your sounds into a sounds object
+    var sounds = {
+        "button1": new Audio('sounds/sound1.mp3'),
+        "button2": new Audio('sounds/sound2.mp3'),
+        // More sounds...
+    };
+
+    // Define the script1 function to play the sound for button1
+    function script1() {
+        sounds['button1'].play();
+    }
+
+    // Define the script2 function to play the sound for button2
+    function script2() {
+        sounds['button2'].play();
+    }
+
+// More script functions...
 
  // Function to handle the arrow clicks
 function handleArrowClick(direction) {
