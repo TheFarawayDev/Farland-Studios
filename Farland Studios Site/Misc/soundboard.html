@@ -38,39 +38,57 @@
     margin-bottom: 5px;
 }
 
+.wrapper {
+    width: 744px;
+    height: 705px;
+    margin: 0 auto; /* Center the wrapper on the page */
+    overflow: auto; /* Add scrollbars if the content exceeds the wrapper size */
+}
+
 </style>
+<div class="wrapper">
 
-<div class="header">
-    <span id="leftArrow" style="cursor: pointer;">«</span>
-    <span id="pageNumber">Ultimate Soundboard (Page 1)</span>
-    <span id="rightArrow" style="cursor: pointer;">»</span>
+    <div class="header">
+        <span id="leftArrow" style="cursor: pointer;">«</span>
+        <span id="pageNumber">Ultimate Soundboard (Page 1)</span>
+        <span id="rightArrow" style="cursor: pointer;">»</span>
+    </div>
+
+    <div class="grid-container">
+        <div id="page1" class="page">
+            <button id="button1" class="grid-item" onclick="script1()">Among Us - Emergency</button>
+            <button id="button2" class="grid-item" onclick="script2()">Emotional Damage</button>
+            <button id="button3" class="grid-item" onclick="script3()">Among Us - Role</button>
+            <button id="button4" class="grid-item" onclick="script4()">Android Notify</button>
+            <button id="button5" class="grid-item" onclick="script5()">Lethal Mine - Trigger</button>
+            <button id="button6" class="grid-item" onclick="script6()">Lethal Mine - Explode</button>
+            <button id="button7" class="grid-item" onclick="script7()">Oh No Our Table</button>
+            <button id="button8" class="grid-item" onclick="script8()">WAYD In My Swamp</button>
+            <button id="button9" class="grid-item" onclick="script1()">Giga Chad</button>
+            <button id="button10" class="grid-item" onclick="script2()">Tom The Train</button>
+            <button id="button11" class="grid-item" onclick="script3()">Lethal Turret - Lock ON</button>
+            <button id="button12" class="grid-item" onclick="script4()">Loud Noise</button>
+            <button id="button13" class="grid-item" onclick="script5()">Explosion</button>
+            <button id="button14" class="grid-item" onclick="script6()">Boo-Womp</button>
+            <button id="button15" class="grid-item" onclick="script7()">Turtle Mine</button>
+            <button id="button16" class="grid-item" onclick="script8()">Damn</button>
+            <button id="button17" class="grid-item" onclick="script8()">Berb</button>
+            <button id="button18" class="grid-item" onclick="script8()">Shimmy Shimmy Ay</button>
+            <button id="button19" class="grid-item" onclick="script8()">Chippi Chappa</button>
+            <button id="button20" class="grid-item" onclick="script8()">Correct</button>
+            <button id="button21" class="grid-item" onclick="script8()">Wrong</button>
+            <button id="button22" class="grid-item" onclick="script8()">Nope</button>
+            <button id="button23" class="grid-item" onclick="script8()">Yippee</button>
+            
+        </div>
+        <div id="page2" class="page" style="display: none;">
+            <button id="button9" class="grid-item" onclick="script3()">Button 1</button>
+            <button id="button10" class="grid-item" onclick="script4()">Button 2</button>
+        </div>
+        <!-- Repeat for more pages as needed -->
+    </div>
 </div>
 
-<div class="grid-container">
-    <div id="page1" class="page">
-        <button id="button1" class="grid-item" onclick="script1()">Among Us - Emergency</button>
-        <button id="button2" class="grid-item" onclick="script2()">Emotional Damage</button>
-        <button id="button3" class="grid-item" onclick="script3()">Among Us - Role</button>
-        <button id="button4" class="grid-item" onclick="script4()">Android Notify</button>
-        <button id="button5" class="grid-item" onclick="script5()">Lethal Mine - Trigger</button>
-        <button id="button6" class="grid-item" onclick="script6()">Lethal Mine - Explode</button>
-        <button id="button7" class="grid-item" onclick="script7()">Oh No Our Table</button>
-        <button id="button8" class="grid-item" onclick="script8()">WAYD In My Swamp</button>
-        <button id="button9" class="grid-item" onclick="script1()">Giga Chad</button>
-        <button id="button10" class="grid-item" onclick="script2()">Tom The Train</button>
-        <button id="button11" class="grid-item" onclick="script3()">Lethal Turret - Lock ON</button>
-        <button id="button12" class="grid-item" onclick="script4()">Loud Noise</button>
-        <button id="button13" class="grid-item" onclick="script5()">Explosion</button>
-        <button id="button14" class="grid-item" onclick="script6()">Boo-Womp</button>
-        <button id="button15" class="grid-item" onclick="script7()">Turtle Mine</button>
-        <button id="button16" class="grid-item" onclick="script8()">EA Sports</button>
-    </div>
-    <div id="page2" class="page" style="display: none;">
-        <button id="button9" class="grid-item" onclick="script3()">Button 1</button>
-        <button id="button10" class="grid-item" onclick="script4()">Button 2</button>
-    </div>
-    <!-- Repeat for more pages as needed -->
-</div>
 
 <script>
     var currentPage = 1; // Variable to keep track of the current page
@@ -102,10 +120,18 @@
     { id: 'button9', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Giga_Chad.mp3?raw=true' },
     { id: 'button10', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Thomas_Train.mp3?raw=true' },
     { id: 'button11', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turret_Lock_On.mp3?raw=true' },
-    { id: 'button12', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Explosion.mp3?raw=true' },
-    { id: 'button13', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Boo_Womp_Spongebob.mp3?raw=true' },
-    { id: 'button14', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turtle_Mine.mp3?raw=true' },
-    { id: 'button15', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turret_Lock_On.mp3?raw=true' },
+    { id: 'button12', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Loud_Noise.mp3?raw=true' },
+    { id: 'button13', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Explosion.mp3?raw=true' },
+    { id: 'button14', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Boo_Womp_Spongebob.mp3?raw=true' },
+    { id: 'button15', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turtle_Mine.mp3?raw=true' },
+    { id: 'button16', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Damn.mp3?raw=true' },
+    { id: 'button17', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Berb.mp3?raw=true' },
+    { id: 'button18', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Shimmy_Shimmy_Ay.mp3?raw=true' },
+    { id: 'button19', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Chippi_Chippi_Chappa.mp3?raw=true' },
+    { id: 'button20', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Correct.mp3?raw=true' },
+    { id: 'button21', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Wrong.mp3?raw=true' },
+    { id: 'button22', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Nope.mp3?raw=true' },
+    { id: 'button23', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Yippee.mp3?raw=true' },
     ];
 
     var audio = null; // Variable to keep track of the currently playing audio
