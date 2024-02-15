@@ -119,6 +119,21 @@
     box-sizing: border-box;
 }
 
+.spin {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 </style>
 <div id="popup" class="popup">
     <div class="popup-header">
@@ -226,6 +241,7 @@
 
 
 <script>
+    
     window.onload = function() {
     var contents = document.getElementsByClassName('tab-content');
     for (var i = 0; i < contents.length; i++) {
@@ -320,30 +336,50 @@ document.getElementById('closeButton').addEventListener('click', function() {
     { id: 'button43', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Good_To_See_You.mp3?raw=true' },
     { id: 'cancelbut', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Canceled.mp3?raw=true' },
     ];
-
+    
+    window.onload = function() {
     var audio = null; // Variable to keep track of the currently playing audio
 
-    sounds.forEach(sound => {
-    sound.audio = new Audio(sound.path);
-    var button = document.getElementById(sound.id);
-    button.addEventListener('click', function() {
-        if (audio) {
-            audio.currentTime = 0; // Stop the audio
-            audio.pause();
-        }
-        audio = sound.audio;
-        audio.volume = 1.0; // Set volume to maximum
-        audio.play();
+    // Open (or create) a cache to store the audio files
+    caches.open('audio-cache').then(function(cache) {
+        sounds.forEach(sound => {
+            var button = document.getElementById(sound.id);
 
-        // Disable the button
-        button.disabled = true;
+            // Add the spinning wheel to the button
+            var spinner = document.createElement('div');
+            spinner.className = 'spin';
+            button.appendChild(spinner);
 
-        // Re-enable the button after a delay
-        setTimeout(function() {
-            button.disabled = false;
-        }, 1000); // Adjust the delay as needed
+            // Add the audio file to the cache
+            cache.add(sound.path).then(function() {
+                // Remove the spinning wheel from the button
+                button.removeChild(spinner);
+            }).catch(function(error) {
+                console.error('Failed to add audio to cache:', error);
+            });
+
+            // Create an Audio object for each sound
+            sound.audio = new Audio(sound.path);
+            button.addEventListener('click', function() {
+                if (audio) {
+                    audio.currentTime = 0; // Stop the audio
+                    audio.pause();
+                }
+                audio = sound.audio;
+                audio.volume = 1.0; // Set volume to maximum
+                audio.play();
+
+                // Disable the button
+                button.disabled = true;
+
+                // Re-enable the button after a delay
+                setTimeout(function() {
+                    button.disabled = false;
+                }, 1000);
+            });
+        });
     });
-});
+};
 
 // More script functions...
 
