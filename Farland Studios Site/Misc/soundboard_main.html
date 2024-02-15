@@ -1,0 +1,432 @@
+<style>
+    @import url('https://fonts.cdnfonts.com/css/vcr-osd-mono');
+
+    body {
+        background-color: #0057C2;
+        margin: 0;
+        padding: 0;
+        border: 4px solid black;
+    }
+
+    .header {
+        background-color: #00469C;
+        color: white;
+        padding: 20px;
+        text-align: left; /* Align the header text to the left */
+        font-size: 24px;
+        font-family: 'VCR OSD Mono', monospace;
+        margin-bottom:-1px;
+        border: 4px solid black; /* Add a black outline to the header */
+    }
+
+    .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, auto-fill);
+    gap: 10px;
+    margin: 6px; /* Add a top margin */
+}
+
+.grid-item {
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+    background-color: lightblue;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 13px;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.foot-button {
+    width: 200px;
+    height: 30px;
+    border: 4px solid black;
+    background-color: lightblue;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 20px;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-bottom: 5px;
+}
+
+.footer {
+    border: 3.5px solid black; /* Add an outline */
+    padding: 8px;
+    text-align: center;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 25px;
+}
+
+.wrapper {
+    width: 744px;
+    height: 705px;
+    margin: 0 auto; /* Center the wrapper on the page */
+    overflow: auto; /* Add scrollbars if the content exceeds the wrapper size */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: lightblue;
+    border: 4px solid black;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.tab-content {
+    /* ... other styles ... */
+    font-size: 20px;
+    margin-top: 8px; /* Increase the font size */
+    /* ... other styles ... */
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 4px solid black;
+    background-color: lightblue;
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.close-button {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border: 4px solid black;
+    background-color: rgb(237, 81, 81);
+    font-family: 'VCR OSD Mono', monospace;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+.spin {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
+<div id="popup" class="popup">
+    <div class="popup-header">
+        <div class="tab">Creators</div>
+        <div class="tab">Sources</div>
+        <div class="tab">Dedications</div>
+        <button id="closeButton" class="close-button">X</button>
+    </div>
+    <div class="popup-content">
+        <div class="tab-content">
+            <h2>Created by TheFarawayDev</h2>
+            <h3>INFO: Learned coding when he was 11 and has offically built 5 games and 15 websites!</h3>
+            <h2>Sponsored By Farland Studios</h2>
+            <h3>INFO: Farland Studios is a game development company that has been around for 1 year and has unblocked 60 games!</h3>
+        </div>
+        <div class="tab-content">
+            <h2>Sound Sources</h2>
+            <h3>INFO: All sounds are from the internet and are not owned by TheFarawayDev or Farland Studios</h3>
+            <h2>Image Sources</h2>
+            <h3>INFO: All images (IF ANY) are from the internet and are not owned by TheFarawayDev or Farland Studios</h3>
+        </div>
+        <div class="tab-content">
+            <h2>Dedicated To</h2>
+            <h3>INFO: This soundboard is dedicated to all the people who have helped TheFarawayDev and Farland Studios</h3>
+            <h2>Special Thanks!</h2>
+            <h3>Marshall, Titus, Cayden, Atticus</h3>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+
+    <div class="header">
+        <span id="leftArrow" style="cursor: pointer;">«</span>
+        <span id="pageNumber">Ultimate Soundboard (Page 1)</span>
+        <span id="rightArrow" style="cursor: pointer;">»</span>
+    </div>
+
+    <div class="grid-container">
+        <div id="page1" class="page">
+            <button id="button1" class="grid-item" onclick="script1()">Among Us - Emergency</button>
+            <button id="button2" class="grid-item" onclick="script2()">Emotional Damage</button>
+            <button id="button3" class="grid-item" onclick="script3()">Among Us - Role</button>
+            <button id="button4" class="grid-item" onclick="script4()">Android Notify</button>
+            <button id="button5" class="grid-item" onclick="script5()">Lethal Mine - Trigger</button>
+            <button id="button6" class="grid-item" onclick="script6()">Lethal Mine - Explode</button>
+            <button id="button7" class="grid-item" onclick="script7()">Oh No Our Table</button>
+            <button id="button8" class="grid-item" onclick="script8()">WAYD In My Swamp</button>
+            <button id="button9" class="grid-item" onclick="script1()">Giga Chad</button>
+            <button id="button10" class="grid-item" onclick="script2()">Tom The Train</button>
+            <button id="button11" class="grid-item" onclick="script3()">Lethal Turret - Lock ON</button>
+            <button id="button12" class="grid-item" onclick="script4()">Loud Noise</button>
+            <button id="button13" class="grid-item" onclick="script5()">Explosion</button>
+            <button id="button14" class="grid-item" onclick="script6()">Boo-Womp</button>
+            <button id="button15" class="grid-item" onclick="script7()">Turtle Mine</button>
+            <button id="button16" class="grid-item" onclick="script8()">Damn</button>
+            <button id="button17" class="grid-item" onclick="script8()">Berb</button>
+            <button id="button18" class="grid-item" onclick="script8()">Shimmy Shimmy Ay</button>
+            <button id="button19" class="grid-item" onclick="script8()">Chippi Chappa</button>
+            <button id="button20" class="grid-item" onclick="script8()">Correct</button>
+            <button id="button21" class="grid-item" onclick="script8()">Wrong</button>
+            <button id="button22" class="grid-item" onclick="script8()">Nope</button>
+            <button id="button23" class="grid-item" onclick="script8()">Yippee</button>
+            <button id="button24" class="grid-item" onclick="script8()">E</button>
+            <button id="button25" class="grid-item" onclick="script8()">EA Sports</button>
+            <button id="button26" class="grid-item" onclick="script8()">Nica</button>
+            <button id="button27" class="grid-item" onclick="script8()">Your Killing Me Smalls</button>
+            <button id="button28" class="grid-item" onclick="script8()">Run Vine</button>
+            <button id="button29" class="grid-item" onclick="script8()">Airhorn</button>
+            <button id="button30" class="grid-item" onclick="script8()">Dacing In The Moonlight</button>
+            <button id="button31" class="grid-item" onclick="script8()">Imma Firing My Laser</button>
+            <button id="button32" class="grid-item" onclick="script8()">Get Down On It</button>
+            <button id="button33" class="grid-item" onclick="script8()">Kami Kami Ha</button>
+            <button id="button34" class="grid-item" onclick="script8()">Human Assult Rifle</button>
+            <button id="button35" class="grid-item" onclick="script8()">I Need More Bullets</button>
+            <button id="button36" class="grid-item" onclick="script8()">Whip Lash</button>
+            <button id="button37" class="grid-item" onclick="script8()">Shotgun Firing</button>
+            <button id="button38" class="grid-item" onclick="script8()">Spongebob Laughing</button>
+            <button id="button39" class="grid-item" onclick="script8()">Minecraft - Door Open</button>
+            <button id="button40" class="grid-item" onclick="script8()">Minecraft - Door Close</button>
+            <button id="button41" class="grid-item" onclick="script8()">Slow Reveal</button>
+            <button id="cancelbut" class="grid-item" onclick="script8()">Cancel Current Sound</button>
+            
+        </div>
+        <div id="page2" class="page" style="display: none;">
+            <button id="button42" class="grid-item" onclick="script3()">Mario Death</button>
+            <button id="button43" class="grid-item" onclick="script4()">Good To See You</button>
+            <button id="button44" class="grid-item" onclick="script3()">Button 1</button>
+            <button id="button45" class="grid-item" onclick="script4()">Button 2</button>
+            <button id="button46" class="grid-item" onclick="script3()">Button 1</button>
+            <button id="button47" class="grid-item" onclick="script4()">Button 2</button>
+            <button id="button48" class="grid-item" onclick="script3()">Button 1</button>
+            <button id="button49" class="grid-item" onclick="script4()">Button 2</button>
+            <button id="button50" class="grid-item" onclick="script3()">Button 1</button>
+            <button id="button51" class="grid-item" onclick="script4()">Button 2</button>
+        </div>
+        <!-- Repeat for more pages as needed -->
+    </div>
+
+    <footer class="footer">
+        Version: BETA_A9u2
+        <button id="popbutton" class="foot-button" onclick="script4()">Information</button>
+    </footer>
+</div>
+
+
+<script>
+
+    var sound = new Audio();
+
+    function playSound(audioUrl) {
+        sound.src = audioUrl.getAttribute('data-url'); //grab the data-url
+        sound.play();
+    }
+
+    function preloadAudio() {
+        var audioButtons = document.querySelectorAll("button[data-type='audio']") //select all button elements with data-type = audio
+        for (var i = 0; i < audioButtons.length; i++) {
+            //loop all audio elements
+            audioButtons[i].setAttribute("disabled", true); //disable the element
+
+            // Add the spinning wheel to the button
+            var spinner = document.createElement('div');
+            spinner.className = 'spin';
+            audioButtons[i].appendChild(spinner);
+
+            var preloader = new Audio();
+            preloader.addEventListener("loadeddata", enableAudioButton.bind(audioButtons[i], spinner), true); // use bind to link the audio button to the function
+            preloader.src = audioButtons[i].getAttribute("data-url"); //trigger the download
+        }
+    }
+
+    function enableAudioButton(spinner) {
+        this.removeAttribute("disabled");  //reenable the button
+
+        // Remove the spinning wheel from the button
+        this.removeChild(spinner);
+    }
+
+    window.onload = preloadAudio;
+    
+    window.onload = function() {
+    var contents = document.getElementsByClassName('tab-content');
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+    }
+};
+
+    var tabs = document.querySelectorAll('.tab');
+    var contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(function(tab, index) {
+    tab.addEventListener('click', function() {
+        // Hide all tab contents
+        contents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+
+        // Show the content for the clicked tab
+        contents[index].style.display = 'block';
+    });
+});
+
+
+    document.getElementById('popbutton').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'block';
+});
+
+document.getElementById('closeButton').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+
+    var currentPage = 1; // Variable to keep track of the current page
+    var audio = null; // Variable to keep track of the currently playing audio
+
+    function disableButtons() {
+        var buttons = document.getElementsByClassName('grid-item');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+
+    function enableButtons() {
+        var buttons = document.getElementsByClassName('grid-item');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }
+
+    var sounds = [
+    { id: 'button1', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Emergency.mp3?raw=true' },
+    { id: 'button2', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Emotional_Damage.mp3?raw=true' },
+    { id: 'button3', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Among_Us_Reveal_Role.mp3?raw=true' },
+    { id: 'button4', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Android_Notification.mp3?raw=true' },
+    { id: 'button5', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Lethal_Mine_Trigger.mp3?raw=true' },
+    { id: 'button6', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Lethal_Mine_Explosion.mp3?raw=true' },
+    { id: 'button7', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Oh_No_Our_Table.mp3?raw=true' },
+    { id: 'button8', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/WAYD_In_My_Swamp.mp3?raw=true' },
+    { id: 'button9', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Giga_Chad.mp3?raw=true' },
+    { id: 'button10', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Thomas_Train.mp3?raw=true' },
+    { id: 'button11', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turret_Lock_On.mp3?raw=true' },
+    { id: 'button12', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Loud_Noise.mp3?raw=true' },
+    { id: 'button13', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Explosion.mp3?raw=true' },
+    { id: 'button14', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Boo_Womp_Spongebob.mp3?raw=true' },
+    { id: 'button15', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Turtle_Mine.mp3?raw=true' },
+    { id: 'button16', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Damn.mp3?raw=true' },
+    { id: 'button17', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Berb.mp3?raw=true' },
+    { id: 'button18', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Shimmy_Shimmy_Ay.mp3?raw=true' },
+    { id: 'button19', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Chippi_Chippi_Chappa.mp3?raw=true' },
+    { id: 'button20', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Correct.mp3?raw=true' },
+    { id: 'button21', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Wrong.mp3?raw=true' },
+    { id: 'button22', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Nope.mp3?raw=true' },
+    { id: 'button23', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Yippee.mp3?raw=true' },
+    { id: 'button24', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/E.mp3?raw=true' },
+    { id: 'button25', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/EA_Sports.mp3?raw=true' },
+    { id: 'button26', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Nica.mp3?raw=true' },
+    { id: 'button27', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Your_Killing_Me_Smalls.mp3?raw=true' },
+    { id: 'button28', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Run_Vine.mp3?raw=true' },
+    { id: 'button29', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Airhorn.mp3?raw=true' },
+    { id: 'button30', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Dancing_In_The_Moonlight.mp3?raw=true' },
+    { id: 'button31', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/I_Am_Firing_My_Laser.mp3?raw=true' },
+    { id: 'button32', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Get_Down_On_It.mp3?raw=true' },
+    { id: 'button33', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Kami_Kami.mp3?raw=true' },
+    { id: 'button34', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Human_Assult_Rifle.mp3?raw=true' },
+    { id: 'button35', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/I_Need_More_Bullets.mp3?raw=true' },
+    { id: 'button36', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Whip.mp3?raw=true' },
+    { id: 'button37', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Shotgun_Fire.mp3?raw=true' },
+    { id: 'button38', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Spongebob_Laugh.mp3?raw=true' },
+    { id: 'button39', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/MC_Door_Open.mp3?raw=true' },
+    { id: 'button40', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/MC_Door_Close.mp3?raw=true' },
+    { id: 'button41', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Slow_Reveal.mp3?raw=true' },
+    { id: 'button42', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Mario_Death.mp3?raw=true' },
+    { id: 'button43', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Good_To_See_You.mp3?raw=true' },
+    { id: 'cancelbut', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Canceled.mp3?raw=true' },
+    ];
+    
+    var audio = null; // Variable to keep track of the currently playing audio
+
+    sounds.forEach(sound => {
+    sound.audio = new Audio(sound.path);
+    var button = document.getElementById(sound.id);
+    button.addEventListener('click', function() {
+        if (audio) {
+            audio.currentTime = 0; // Stop the audio
+            audio.pause();
+        }
+        audio = sound.audio;
+        audio.volume = 1.0; // Set volume to maximum
+        audio.play();
+
+        // Disable the button
+        button.disabled = true;
+
+        // Re-enable the button after a delay
+        setTimeout(function() {
+            button.disabled = false;
+        }, 1000); // Adjust the delay as needed
+    });
+});
+
+// More script functions...
+
+ // Function to handle the arrow clicks
+function handleArrowClick(direction) {
+    // Determine the new page number
+    if (direction === 'left' && currentPage > 1) {
+        currentPage--;
+    } else if (direction === 'right') {
+        // Replace '2' with the total number of pages
+        if (currentPage < 2) {
+            currentPage++;
+        }
+    }
+
+    // Hide all pages
+    var pages = document.getElementsByClassName('page');
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
+
+    // Show the current page
+    document.getElementById('page' + currentPage).style.display = 'block';
+
+    // Update the page number display
+    document.getElementById('pageNumber').textContent = 'Ultimate Soundboard (Page ' + currentPage + ')';
+}
+
+    // Add event listeners to the arrow elements
+    document.getElementById('leftArrow').addEventListener('click', function() {
+        handleArrowClick('left');
+    });
+
+    document.getElementById('rightArrow').addEventListener('click', function() {
+        handleArrowClick('right');
+    });
+</script>
