@@ -244,40 +244,6 @@
 
 
 <script>
-
-    var sound = new Audio();
-
-    function playSound(audioUrl) {
-        sound.src = audioUrl.getAttribute('data-url'); //grab the data-url
-        sound.play();
-    }
-
-    function preloadAudio() {
-        var audioButtons = document.querySelectorAll("button[data-type='audio']") //select all button elements with data-type = audio
-        for (var i = 0; i < audioButtons.length; i++) {
-            //loop all audio elements
-            audioButtons[i].setAttribute("disabled", true); //disable the element
-
-            // Add the spinning wheel to the button
-            var spinner = document.createElement('div');
-            spinner.className = 'spin';
-            audioButtons[i].appendChild(spinner);
-
-            var preloader = new Audio();
-            preloader.addEventListener("loadeddata", enableAudioButton.bind(audioButtons[i], spinner), true); // use bind to link the audio button to the function
-            preloader.src = audioButtons[i].getAttribute("data-url"); //trigger the download
-        }
-    }
-
-    function enableAudioButton(spinner) {
-        this.removeAttribute("disabled");  //reenable the button
-
-        // Remove the spinning wheel from the button
-        this.removeChild(spinner);
-    }
-
-    window.onload = preloadAudio;
-    
     window.onload = function() {
     var contents = document.getElementsByClassName('tab-content');
     for (var i = 0; i < contents.length; i++) {
@@ -380,10 +346,6 @@ document.getElementById('closeButton').addEventListener('click', function() {
     { id: 'button51', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Is_This_A_Tuba.mp3?raw=true' },
     { id: 'button52', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Friends.mp3?raw=true' },
     { id: 'button53', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Are_You_Dead.mp3?raw=true' },
-    { id: 'button54', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/MC_Door_Close.mp3?raw=true' },
-    { id: 'button55', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Slow_Reveal.mp3?raw=true' },
-    { id: 'button56', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Mario_Death.mp3?raw=true' },
-    { id: 'button57', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Good_To_See_You.mp3?raw=true' },
     { id: 'cancelbut', path: 'https://github.com/TheFarawayDev/Farland-Studios/blob/main/Farland%20Studios%20Site/Misc/Music/Canceled.mp3?raw=true' },
     ];
     
