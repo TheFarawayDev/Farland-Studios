@@ -13,8 +13,6 @@ If the site is blocked please do the following:
 
 1. If it is blocked use this url but don't hit enter yet!
 https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/
-2. Enter the name of the game the names will be provided in a file or below due to how case sensitve it is.
-3. Enjoy the games with no google site! And it is practically unblockable until a teachers finds it! Which could take around 50 years and by then i'm long gone.
 
 ## Joining The Team!
 
