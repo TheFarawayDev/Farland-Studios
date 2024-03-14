@@ -1,8 +1,99 @@
-<div style="text-align: center;">
-    <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo">
-    <h2>Farland Studios</h2>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Farland Studios</title>
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333333;
+        }
+        .container {
+            width: 744px;
+            height: 546px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #333333;
+            position: relative; /* Added this line */
+        }
+        .button {
+            width: 730px;
+            padding: 10px;
+            margin-bottom: 12px;
+            background-color: #104570;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'VCR OSD Mono', sans-serif;
+            font-size: 20px;
+            outline: 3.5px solid #000000;
+        }
+        .logo {
+            width: 50%;
+            height: 20%;
+            margin-bottom: 15px;
+            outline: 4px solid #000000;
+            margin-left: 0px;
+            margin-right: auto;
+        }
+        .clock-container {
+            font-family: 'VCR OSD Mono', sans-serif;
+            font-size: 60px;
+            color: #ffffff;
+            position: absolute; /* Added this line */
+            top: 20px; /* Adjust this value as needed */
+            left: 415px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock-container">
+            <div class="clock" id="clock"></div>
+            <h5>Your Header Text Here</h5>
+        </div>
+        <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo" class="logo">
+        
+        <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Cookie_Clicker.html')">Cookie Clicker</button>
+        
+        <button class="button" onclick="openGame('https://example.com/button2')">Button 2</button>
+        
+        <button class="button" onclick="openGame('https://example.com/button3')">Button 3</button>
+    </div>
+    <script>
+        function openGame(fullUrl) {
+            var win = window.open();
+            var url = fullUrl;
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
 
-<button style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: #099bbf; color: rgb(255, 255, 255); border: 2px solid #000000; border-radius: 3px; cursor: pointer; font-family: inherit; font-size: inherit;">Button 1</button>
-<button style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: #099bbf; color: rgb(255, 255, 255); border: 2px solid #000000; border-radius: 3px; cursor: pointer; font-family: inherit; font-size: inherit;">Button 2</button>
-<button style="width: 100%; padding: 10px; margin-bottom: 10px; background-color: #099bbf; color: rgb(255, 255, 255); border: 2px solid #000000; border-radius: 3px; cursor: pointer; font-family: inherit; font-size: inherit;">Button 3</button>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            var seconds = now.getSeconds();
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            var clockElement = document.getElementById("clock");
+            clockElement.textContent = hours + ":" + minutes + ":" + seconds;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
