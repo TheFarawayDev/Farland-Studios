@@ -11,20 +11,21 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #0b0b0b;
+            background: radial-gradient(circle at center center, #333333 70%, #0b0b0b 100%);
         }
 
         .container {
-            width: 744px;
+            width: 750px;
             height: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             background-color: #333333;
+            position: relative;
         }
         .button {
-            width: 740px;
+            width: 725px;
             padding: 10px;
             margin-bottom: 12px;
             background-color: #104570;
@@ -39,9 +40,10 @@
         .logo {
             width: 50%;
             height: 20%;
+            margin-top: 15px;
             margin-bottom: 15px;
             outline: 4px solid #000000;
-            margin-left: 0px;
+            margin-left: 10px;
             margin-right: auto;
         }
         .clock-container {
@@ -50,7 +52,7 @@
             color: #ffffff;
             position: absolute; /* Added this line */
             top: -50px; /* Adjust this value as needed */
-            left: 415px; /* Adjust this value as needed */
+            left: 425px; /* Adjust this value as needed */
         }
     </style>
 </head>
