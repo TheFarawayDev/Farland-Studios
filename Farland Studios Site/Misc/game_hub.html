@@ -23,8 +23,8 @@
             justify-content: flex-start; /* Aligns content to the top */
             background-color: #333333;
             position: relative;
-            margin-top: 360px;
-            margin-bottom: 200px;
+            margin-top: 300px;
+            margin-bottom: 300px;
         }
         .button {
             width: 720px;
@@ -127,7 +127,10 @@
             var iframe = win.document.createElement('iframe');
             iframe.style.width = "100%";
             iframe.style.height = "100% ";
+            iframe.style.border = "2px solid #000000";
             iframe.src = url;
+            win.document.body.style.margin = "0"; // Add this line
+            win.document.body.style.padding = "0"; // Add this line
             win.document.body.appendChild(iframe);
         }
 
