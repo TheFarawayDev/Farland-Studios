@@ -23,7 +23,7 @@
             justify-content: flex-start; /* Aligns content to the top */
             background-color: #333333;
             position: relative;
-            margin-top: 200px;
+            margin-top: 360px;
             margin-bottom: 200px;
         }
         .button {
@@ -71,10 +71,19 @@
             <div class="clock" id="clock"></div>
         </div>
         <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo" class="logo">
+        <button class="button" onclick="confirmAndOpenGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/game_hub.html')">Open In Secure Mode</button>
         <div class="button-container">
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Ages_Of_Conflict.html')">Ages Of Conflict</button>
 
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Bitlife.html')">Bitlife</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Block_The_Pig.html')">Block The Pig</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/BloonsTD/BTD1.html')">Bloons TD 1</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/BloonsTD/BTD2.html')">Bloons TD 2</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/BloonsTD/BTD3.html')">Bloons TD 3</button>
 
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Cookie_Clicker.html')">Cookie Clicker</button>
             
@@ -106,13 +115,18 @@
         </div>
     </div>
     <script>
+        function confirmAndOpenGame(url) {
+            if (confirm("Do you want to open this in secure mode?")) {
+                openGame(url);
+            }
+        }
+
         function openGame(fullUrl) {
             var win = window.open();
             var url = fullUrl;
             var iframe = win.document.createElement('iframe');
             iframe.style.width = "100%";
-            iframe.style.height = "100%";
-            iframe.style.border = "none";
+            iframe.style.height = "100% ";
             iframe.src = url;
             win.document.body.appendChild(iframe);
         }
