@@ -4,14 +4,16 @@
     <script>
         var newUrl = "https://thefarawaydev.github.io/baldis-basics/"
         var fullUrl = "https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Baldis_Basics.html"
-        function openGame() {
-            var win = window.open();
+        function openGame(fullUrl) {
+            var win = window.open('', '', 'width=250,height=250'); // Set the new window size
             var url = fullUrl;
             var iframe = win.document.createElement('iframe');
-            iframe.style.width = "100%";
-            iframe.style.height = "100%";
-            iframe.style.border = "none";
+            iframe.style.width = "100%"; // Set the iframe width to 100%
+            iframe.style.height = "100%"; // Set the iframe height
+            iframe.style.border = "2px solid #000000";
             iframe.src = url;
+            win.document.body.style.margin = "0";
+            win.document.body.style.padding = "0";
             win.document.body.appendChild(iframe);
         }
     </script>
