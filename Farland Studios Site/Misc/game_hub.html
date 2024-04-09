@@ -25,13 +25,13 @@
             textContainer.style.display = 'block';
             }
         });
-        while (isSecure === false) {
-            if (window.self !== window.top) {
-                isSecure = true;
-            } else {
-                isSecure = false;
-            }
-        }
+
+        if (window.self !== window.top) {
+            isSecure = true;
+        } else {
+            isSecure = false;
+        };
+
         window.addEventListener('DOMContentLoaded', function() {
             var buttonContainer = document.querySelector('.button-container');
             if (isSecure) {
