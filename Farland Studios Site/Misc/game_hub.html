@@ -4,6 +4,40 @@
     <meta charset="UTF-8">
     <title>Farland Studios</title>
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <script>
+        isSecure = false;
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var buttonContainer = document.querySelector('.button-container');
+            var textContainer = document.createElement('div');
+            textContainer.textContent = 'Not In Secure Mode, Switch NOW!';
+            textContainer.style.color = '#ffffff';
+            textContainer.style.fontFamily = 'VCR OSD Mono, sans-serif';
+            textContainer.style.fontSize = '50px';
+            textContainer.style.textAlign = 'center';
+            textContainer.style.marginTop = '10px';
+            buttonContainer.parentNode.insertBefore(textContainer, buttonContainer);
+            if (isSecure) {
+            buttonContainer.style.display = 'block';
+            textContainer.style.display = 'none';
+            } else {
+            buttonContainer.style.display = 'none';
+            textContainer.style.display = 'block';
+            }
+        });
+        if (window.location.href === 'about:blank') {
+            isSecure = true;
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+            var buttonContainer = document.querySelector('.button-container');
+            if (isSecure) {
+                buttonContainer.style.display = 'block';
+            } else {
+                buttonContainer.style.display = 'none';
+            }
+        });
+    </script>
+    </script>
     <style>
         body {
             display: flex;
