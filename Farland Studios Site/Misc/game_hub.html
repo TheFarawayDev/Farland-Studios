@@ -25,10 +25,12 @@
             textContainer.style.display = 'block';
             }
         });
-        if (window.location.href === 'https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/game_hub.html') {
-            isSecure = false;
-        } else {
-            isSecure = true;
+        while (isSecure === false) {
+            if (window.self !== window.top) {
+                isSecure = true;
+            } else {
+                isSecure = false;
+            }
         }
         window.addEventListener('DOMContentLoaded', function() {
             var buttonContainer = document.querySelector('.button-container');
