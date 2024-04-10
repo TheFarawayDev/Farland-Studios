@@ -76,5 +76,17 @@
         "password": "lovesdesks",
         "name": "Emma D. | VIP",
         "status": "active"
+    },
+    {
+        "username": "ember",
+        "password": "lovesmanaroni",
+        "name": "Ember M. | TES",
+        "status": "active"
+    },
+    {
+        "username": "chloe",
+        "password": "isfaulty",
+        "name": "Chloe. | VIP",
+        "status": "active"
     }
 ]

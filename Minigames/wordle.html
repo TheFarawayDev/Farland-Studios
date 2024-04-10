@@ -1,0 +1,100 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Wordle Game</title>
+        <style>
+            /* CSS styles for word-container */
+            #word-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+            
+            /* CSS styles for guess-container */
+            #guess-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            /* CSS styles for guess-input */
+            #guess-input {
+                padding: 5px;
+                margin-right: 10px;
+            }
+            
+            /* CSS styles for guess-button */
+            #guess-button {
+                padding: 5px 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            
+            /* CSS styles for letter-box */
+            .letter-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px; /* Increased width */
+                height: 50px; /* Increased height */
+                border: 1px solid black;
+                margin-right: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Wordle Game</h1>
+        
+        <div id="word-container">
+            <!-- Add your word display here -->
+        </div>
+        
+        <div id="guess-container">
+            <!-- Add your guess input and button here -->
+            <input type="text" id="guess-input" placeholder="Enter your guess">
+            <button id="guess-button">Guess</button>
+        </div>
+        
+        <script>
+            // Add your JavaScript code here
+            const words = ['apple', 'banana', 'cherry', 'orange', 'strawberry']; // Array of words
+            const letterBoxes = document.getElementById('word-container');
+            const guessInput = document.getElementById('guess-input');
+            const guessButton = document.getElementById('guess-button');
+            
+            // Function to choose a random word from the array
+            function chooseRandomWord() {
+                const randomIndex = Math.floor(Math.random() * words.length);
+                return words[randomIndex];
+            }
+            
+            // Function to generate letter boxes based on the chosen word
+            function generateLetterBoxes(word) {
+                for (let i = 0; i < word.length; i++) {
+                    const letterBox = document.createElement('div');
+                    letterBox.classList.add('letter-box', 'in-word');
+                    letterBox.textContent = word[i];
+                    letterBoxes.appendChild(letterBox);
+                }
+            }
+            
+            // Event listener for the guess button
+            guessButton.addEventListener('click', () => {
+                const guess = guessInput.value;
+                if (guess.length === letterBoxes.children.length) {
+                    for (let i = 0; i < letterBoxes.children.length; i++) {
+                        letterBoxes.children[i].textContent = guess[i];
+                    }
+                }
+            });
+            
+            // Initialize the game
+            const randomWord = chooseRandomWord();
+            generateLetterBoxes(randomWord);
+        </script>
+    </body>
+    </html>
