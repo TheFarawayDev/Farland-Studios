@@ -93,32 +93,33 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            var response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
-            var users = await response.json();
+            try {
+                let response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/account_status.json');
+                let data = await response.json();
 
-            var user = users.find(function (user) {
-                return user.username === username;
-            });
+                var user = data.users.find(user => user.username === username && user.password === password);
 
-            if (user && user.password === password) {
-                if (user.status === "active") {
-                    document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
-                    setTimeout(function () {
-                        window.location.href = newUrl;
-                    }, 4000);
-                } else if (user.status === "inactive") {
-                    document.getElementById("result").innerHTML = "Your account is inactive. Please contact support.";
-                } else if (user.status === "pending") {
-                    document.getElementById("result").innerHTML = "Your account is pending. Please contact support.";
-                } else if (user.status === "suspended") {
-                    document.getElementById("result").innerHTML = "Your account is suspended. Your Account Will Be Deleted In 30 Days.";
+                if (user) {
+                    switch (user.status) {
+                        case "active":
+                            document.getElementById("result").innerHTML = "Login successful! Welcome " + user.name;
+                            setTimeout(() => window.location.href = newUrl, 4000);
+                            break;
+                        case "inactive":
+                        case "pending":
+                        case "suspended":
+                            document.getElementById("result").innerHTML = data.messages[user.status];
+                            break;
+                        default:
+                            document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                    }
                 } else {
-                    document.getElementById("result").innerHTML = "Invalid account status. Please contact support.";
+                    document.getElementById("result").innerHTML = "Invalid username or password";
                 }
-            } else {
-                document.getElementById("result").innerHTML = "Invalid username or password";
+            } catch (error) {
+                console.error('Error:', error);
             }
-      }
+        }
     </script>
 </body>
 </html>

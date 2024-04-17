@@ -1,74 +1,82 @@
-[
-    {
-        "username": "faraway",
-        "password": "Eastwood99!",
-        "name": "Marshall E. | Pres.",
-        "status": "active"
-    },
-    {
-        "username": "caybutgame",
-        "password": "caydenstoving",
-        "name": "Cayden B. | N/A",
-        "status": "suspended"
-    },
-    {
-        "username": "peytoninmay",
-        "password": "heyitspeyton",
-        "name": "Peyton P. | TES",
-        "status": "active"
-    },
-    {
-        "username": "titus",
-        "password": "titusisawesome",
-        "name": "Titus A. | VIP",
-        "status": "active"
-    },
-    {
-        "username": "GuestUser",
-        "password": "guest",
-        "name": "Guest User | UKN",
-        "status": "active"
-    },
-    {
-        "username": "onecent",
-        "password": "equalsvincent",
-        "name": "Vincent B. | TES",
-        "status": "active"
-    },
-    {
-        "username": "brookieis",
-        "password": "acookie",
-        "name": "Brooklyn K. | TES",
-        "status": "active"
-    },
-    {
-        "username": "buyadesk",
-        "password": "andgetonefree",
-        "name": "James D. | CDA",
-        "status": "active"
-    },
-    {
-        "username": "joshua",
-        "password": "washere",
-        "name": "Joshua B. | VIP",
-        "status": "inactive"
-    },
-    {
-        "username": "emma",
-        "password": "lovesdesks",
-        "name": "Emma D. | VIP",
-        "status": "active"
-    },
-    {
-        "username": "ember",
-        "password": "lovesmanaroni",
-        "name": "Ember M. | TES",
-        "status": "active"
-    },
-    {
-        "username": "chloe",
-        "password": "isfaulty",
-        "name": "Chloe. | VIP",
-        "status": "active"
+{
+        "users": [
+        {
+            "username": "faraway",
+            "password": "Eastwood99!",
+            "name": "Marshall E. | Pres.",
+            "status": "active"
+        },
+        {
+            "username": "caybutgame",
+            "password": "caydenstoving",
+            "name": "Cayden B. | N/A",
+            "status": "suspended"
+        },
+        {
+            "username": "peytoninmay",
+            "password": "heyitspeyton",
+            "name": "Peyton P. | TES",
+            "status": "active"
+        },
+        {
+            "username": "titus",
+            "password": "titusisawesome",
+            "name": "Titus A. | VIP",
+            "status": "active"
+        },
+        {
+            "username": "GuestUser",
+            "password": "guest",
+            "name": "Guest User | UKN",
+            "status": "active"
+        },
+        {
+            "username": "onecent",
+            "password": "equalsvincent",
+            "name": "Vincent B. | TES",
+            "status": "active"
+        },
+        {
+            "username": "brookieis",
+            "password": "acookie",
+            "name": "Brooklyn K. | TES",
+            "status": "active"
+        },
+        {
+            "username": "buyadesk",
+            "password": "andgetonefree",
+            "name": "James D. | CDA",
+            "status": "active"
+        },
+        {
+            "username": "joshua",
+            "password": "washere",
+            "name": "Joshua B. | VIP",
+            "status": "inactive"
+        },
+        {
+            "username": "emma",
+            "password": "lovesdesks",
+            "name": "Emma D. | VIP",
+            "status": "active"
+        },
+        {
+            "username": "ember",
+            "password": "lovesmanaroni",
+            "name": "Ember M. | TES",
+            "status": "active"
+        },
+        {
+            "username": "chloe",
+            "password": "isfaulty",
+            "name": "Chloe. | VIP",
+            "status": "active"
+        }
+    ],
+
+    "messages": {
+        "inactive": "Your account is inactive. Please contact support.",
+        "pending": "Your account is pending. Please contact support.",
+        "suspended": "Your account is suspended. Your Account Will Be Deleted In 30 Days."
     }
-]
+}   
