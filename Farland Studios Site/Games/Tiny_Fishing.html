@@ -94,7 +94,7 @@
             var password = document.getElementById("password").value;
 
             try {
-                let response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/account_status.json');
+                let response = await fetch('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/userdata.json');
                 let data = await response.json();
 
                 var user = data.users.find(user => user.username === username && user.password === password);
