@@ -75,8 +75,8 @@
     ],
 
     "messages": {
-        "inactive": "Your account is inactive. Please contact support.",
-        "pending": "Your account is pending. Please contact support.",
-        "suspended": "Your account is suspended. Your Account Will Be Deleted In 30 Days."
+        "inactive": "Your account is inactive. Please contact support for reactivation.",
+        "pending": "Your account is pending. It will take a few days before it is active.",
+        "suspended": "Your account is suspended. Your account will be deleted in 30 Days."
     }
 }   
