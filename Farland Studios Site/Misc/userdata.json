@@ -1,11 +1,5 @@
 [
     {
-        "username": "lamegamer2023",
-        "password": "lamegametime",
-        "name": "Lametrius C. | TES",
-        "status": "active"
-    },
-    {
         "username": "faraway",
         "password": "Eastwood99!",
         "name": "Marshall E. | Pres.",
@@ -14,7 +8,7 @@
     {
         "username": "caybutgame",
         "password": "caydenstoving",
-        "name": "Cayden B. | VP",
+        "name": "Cayden B. | N/A",
         "status": "suspended"
     },
     {
@@ -26,14 +20,8 @@
     {
         "username": "titus",
         "password": "titusisawesome",
-        "name": "Titus A. | TES",
+        "name": "Titus A. | VIP",
         "status": "active"
-    },
-    {
-        "username": "agrayday",
-        "password": "turnedbright",
-        "name": "Grayson Hurst | TES",
-        "status": "suspended"
     },
     {
         "username": "GuestUser",
@@ -56,20 +44,14 @@
     {
         "username": "buyadesk",
         "password": "andgetonefree",
-        "name": "James D. | VIP",
-        "status": "active"
-    },
-    {
-        "username": "jayman",
-        "password": "istheman",
-        "name": "Jalen H | VIP",
+        "name": "James D. | CDA",
         "status": "active"
     },
     {
         "username": "joshua",
         "password": "washere",
         "name": "Joshua B. | VIP",
-        "status": "active"
+        "status": "inactive"
     },
     {
         "username": "emma",

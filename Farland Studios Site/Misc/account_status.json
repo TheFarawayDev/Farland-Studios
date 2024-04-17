@@ -1,0 +1,6 @@
+{
+    "inactive": "Your account is inactive. Please contact support.",
+    "pending": "Your account is pending. Please contact support.",
+    "suspended": "Your account is suspended. Your Account Will Be Deleted In 30 Days.",
+    "invalidStatus": "Invalid account status. Please contact support."
+}
