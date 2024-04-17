@@ -196,6 +196,7 @@
     <script>
         function confirmAndOpenGame(url) {
             if (confirm("Do you want to open this in secure mode?")) {
+                window.close(); // Close the previous tab
                 openGame(url);
             }
         }
