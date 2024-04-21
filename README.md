@@ -7,13 +7,6 @@
 
 If you are new here you probably don't know about the elephant in the room. No not an actual elephant but issues. As most know (except for you) I have a site called Farland Studios a site that both makes games and unblocks them. But it can be risky sometimes so you may be able to help with the site.
 
-## Just In Case The Google Site Is Blocked!
-
-If the site is blocked please do the following:
-
-1. If it is blocked use this url but don't hit enter yet!
-https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/
-
 ## Joining The Team!
 
 If you want to join you can request to via. email or the form that is currently on the site. So you may be wondering <strong> WHAT'S THE CATCH? </strong> Well my young minded friend you need to meet the following.
