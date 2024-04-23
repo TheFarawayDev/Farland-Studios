@@ -71,6 +71,12 @@
             "password": "isfaulty",
             "name": "Chloe. | VIP",
             "status": "active"
+        },
+        {
+            "username": "chloe",
+            "password": "isfaulty",
+            "name": "Chloe. | VIP",
+            "status": "active"
         }
     ],
 
