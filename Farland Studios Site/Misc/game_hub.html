@@ -124,7 +124,7 @@
             <div style="margin-top: -40px;"></div>
             <div class="clock" id="clock"></div>
             <div style="margin-top: 40px;"></div>
-            <h7>v0.1.14-b</h7>
+            <h7>v0.1.14-1</h7>
         </div>
         <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo" class="logo">
         <button class="open-secure" onclick="confirmAndOpenGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/game_hub.html')">Open In Secure Mode</button>
@@ -292,7 +292,7 @@
 
         function openGame(fullUrl) {
             var win = window.open();
-            var url = fullUrl;
+            var url = fullUrl + '?v=' + Math.random(); // Add a random query parameter to the URL
             var iframe = win.document.createElement('iframe');
             iframe.style.width = "100%";
             iframe.style.height = "100% ";
