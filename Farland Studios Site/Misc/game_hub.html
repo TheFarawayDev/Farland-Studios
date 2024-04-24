@@ -131,7 +131,7 @@
         <div class="button-container">
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/1v1_lol.html')">1v1.lol</button>
 
-            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Video_Player.html')">The Truth</button>
+            <button class="button" onclick="playVideo()">The Truth</button>
 
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Games/Ages_Of_Conflict.html')">Ages Of Conflict</button>
 
@@ -288,6 +288,42 @@
                 window.close(); // Close the previous tab
                 openGame(url);
             }
+        }
+
+        function playVideo() {
+            // Add your video playing logic here
+            // For example, you can use the HTML5 video element to play a video
+            var videoElement = document.createElement('video');
+            videoElement.src = 'https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/The_Truth.mp4';
+            videoElement.controls = false;
+            videoElement.autoplay = true;
+            videoElement.style.width = '100%';
+            videoElement.style.height = '100%';
+            
+            var container = document.querySelector('.container');
+            container.innerHTML = ''; // Clear the container
+            container.appendChild(videoElement);
+            
+            videoElement.addEventListener('ended', function() {
+                container.innerHTML = ''; // Clear the container
+                // Add your code to show the buttons again
+                var buttonContainer = document.createElement('div');
+                buttonContainer.className = 'button-container';
+                
+                // Add your buttons here
+                var button1 = document.createElement('button');
+                button1.className = 'button';
+                button1.textContent = 'Button 1';
+                buttonContainer.appendChild(button1);
+                
+                var button2 = document.createElement('button');
+                button2.className = 'button';
+                button2.textContent = 'Button 2';
+                buttonContainer.appendChild(button2);
+                
+                // Append the button container back to the container
+                container.appendChild(buttonContainer);
+            });
         }
 
         function openGame(fullUrl) {
