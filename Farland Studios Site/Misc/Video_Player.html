@@ -20,22 +20,10 @@
 </head>
 <body>
     <div id="video-container">
-        <video id="video-player" controls autoplay>
+        <video id="video-player" controls>
             <source src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/The_Truth.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var videoContainer = document.getElementById("video-container");
-            var videoPlayer = document.getElementById("video-player");
-
-            videoPlayer.addEventListener("loadedmetadata", function() {
-                videoPlayer.play();
-                videoPlayer.requestFullscreen();
-            });
-        });
-    </script>
 </body>
 </html>
