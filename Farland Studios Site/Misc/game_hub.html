@@ -301,7 +301,9 @@
             win.document.body.style.margin = "0"; // Add this line
             win.document.body.style.padding = "0"; // Add this line
             win.document.body.style.overflow = "hidden"; 
-            win.document.body.appendChild(iframe);
+            setTimeout(function() {
+                win.document.body.appendChild(iframe);
+            }, 500); // Add this line to delay appending the iframe
         }
 
         function updateClock() {
