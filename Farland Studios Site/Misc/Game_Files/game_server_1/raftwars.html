@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-
-
+<html></html>
 <head>
-	 <title>
-   Chili Bowl Games Secret Ruffle Stash 
-  </title>
-
+  <title>Chili Bowl Games Secret Ruffle Stash</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    #content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #game {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    @media (max-width: 700px) {
+      #game {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
 </head>
-
-  <body>
-    
-	  <style> body {background-color: #000000 }</style>
-  <!-- Div content -->
-<div style="margin:0 auto;text-align:center">
-     <embed src="raft-wars.swf" width="700" height="600"> </embed>
-      <!-- Div align in the middle -->
-      <div style="margin-left:auto;margin-right:auto;text-align:center">
-         
-      </div>
-
-</div>
-    
-
-   <script src="ruffle.js"></script>
-
+<body>
+  <div id="content">
+    <embed id="game" src="raft-wars.swf">
+  </div>
+  <script src="ruffle.js"></script>
 </body>
 </html>
