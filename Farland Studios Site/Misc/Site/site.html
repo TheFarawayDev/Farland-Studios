@@ -127,7 +127,7 @@
             <h7>v0.1.14-4</h7>
         </div>
         <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo" class="logo">
-        <button class="open-secure" onclick="confirmAndOpenGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/game_hub.html')">Open In Secure Mode</button>
+        <button class="open-secure" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/game_hub.html')">Open In Secure Mode</button>
         <div class="button-container">
             <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Video_Player.html')">1 Truthful Tale</button>
 
@@ -289,12 +289,6 @@
         </div>
     </div>
     <script>
-        function confirmAndOpenGame(url) {
-            if (confirm("Do you want to open this in secure mode?")) {
-                openGame(url);
-            }
-        }
-
         function openGame(fullUrl) {
             var win = window.open();
             var url = fullUrl + '?v=' + Math.random(); // Add a random query parameter to the URL
@@ -308,7 +302,7 @@
             win.document.body.style.overflow = "hidden"; 
             setTimeout(function() {
                 win.document.body.appendChild(iframe);
-            }, 500); // Add this line to delay appending the iframe
+            }, 200); // Add this line to delay appending the iframe
         }
 
         function updateClock() {
