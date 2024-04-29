@@ -10,7 +10,7 @@
             "username": "caybutgame",
             "password": "caydenstoving",
             "name": "Cayden B. | N/A",
-            "status": "active"
+            "status": "deleted"
         },
         {
             "username": "peytoninmay",
@@ -83,6 +83,7 @@
     "messages": {
         "inactive": "Your account is inactive. Please contact support for reactivation.",
         "pending": "Your account is pending. It will take a few days before it is active.",
-        "suspended": "Your account is suspended. Your account will be deleted in 30 Days."
+        "suspended": "Your account is suspended. Your account will be deleted in 30 Days.",
+        "deleted": "Your account has been deleted, It is hard for this to happen and this is permenant!"
     }
 }   
