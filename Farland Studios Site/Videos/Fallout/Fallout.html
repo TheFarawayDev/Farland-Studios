@@ -1,1 +1,186 @@
-<iframe src="https://ia600303.us.archive.org/30/items/fallout_series/EP7.mp4" width="640" height="580" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Farland Studios</title>
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+    <script>
+        isSecure = false;
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var buttonContainer = document.querySelector('.button-container');
+            var textContainer = document.createElement('div');
+            textContainer.textContent = 'Not In Secure Mode, Switch NOW!';
+            textContainer.style.color = '#ffffff';
+            textContainer.style.fontFamily = 'VCR OSD Mono, sans-serif';
+            textContainer.style.fontSize = '50px';
+            textContainer.style.textAlign = 'center';
+            textContainer.style.marginTop = '10px';
+            buttonContainer.parentNode.insertBefore(textContainer, buttonContainer);
+            if (isSecure) {
+            buttonContainer.style.display = 'block';
+            textContainer.style.display = 'none';
+            } else {
+            buttonContainer.style.display = 'none';
+            textContainer.style.display = 'block';
+            }
+        });
+
+        if (window.self !== window.top) {
+            isSecure = true;
+        } else {
+            isSecure = false;
+        };
+
+        window.addEventListener('DOMContentLoaded', function() {
+            var buttonContainer = document.querySelector('.button-container');
+            if (isSecure) {
+                buttonContainer.style.display = 'block';
+            } else {
+                buttonContainer.style.display = 'none';
+            }
+        });
+    </script>
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle at center center, #333333 60%, #0b0b0b 90%);
+            overflow: hidden;
+        }
+
+        .container {
+            width: 750px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligns content to the top */
+            background-color: #333333;
+            position: relative;
+            margin-top: 330px;
+            margin-bottom: 380px;
+        }
+        .button {
+            width: 720px;
+            padding: 10px;
+            margin: 12px;
+            background-color: #104570;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'VCR OSD Mono', sans-serif;
+            font-size: 20px;
+            outline: 3.5px solid #000000;
+        }
+        .button-container {
+            width: auto;
+            max-height: 250px; /* Adjust as needed */
+            overflow-y: auto; /* Makes the container scrollable */
+            margin-top: 5px; /* Adds some space between the containers */
+            margin-bottom: 5px;
+        }
+        .logo {
+            width: 50%;
+            height: 20%;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            outline: 4px solid #000000;
+            margin-left: 10px;
+            margin-right: auto;
+        }
+        .clock-container {
+            font-family: 'VCR OSD Mono', sans-serif;
+            font-size: 60px;
+            color: #ffffff;
+            position: absolute; /* Added this line */
+            top: -50px; /* Adjust this value as needed */
+            left: 425px; /* Adjust this value as needed */
+        }
+        .open-secure {
+            padding: 10px;
+            width: 720px;
+            background-color: #104570;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'VCR OSD Mono', sans-serif;
+            font-size: 20px;
+            outline: 3.5px solid #000000;
+            margin-right: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock-container">
+            <h5>Farland Studios Videos</h5>
+            <div style="margin-top: -40px;"></div>
+            <div class="clock" id="clock"></div>
+            <div style="margin-top: 40px;"></div>
+            <div>Fallout</div>
+        </div>
+        <img src="https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Misc/Images/Farland_Studios.png" alt="Farland Studios Logo" class="logo">
+        <div class="button-container">
+            <button class="button" onclick="openGame('https://ia600303.us.archive.org/30/items/fallout_series/EP7.mp4')">S1, E1</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP2.html')">S1, E2</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP3.html')">S1, E3</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP4.html')">S1, E4</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP5.html')">S1, E5</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP6.html')">S1, E6</button>
+
+            <button class="button" onclick="openGame('https://ia600303.us.archive.org/30/items/fallout_series/EP7.mp4')">S1, E7</button>
+
+            <button class="button" onclick="openGame('https://thefarawaydev.github.io/Farland-Studios/Farland%20Studios%20Site/Videos/Invincible/EP8.html')">S1, E8</button>
+        </div>
+    </div>
+    <script>
+        function openGame(fullUrl) {
+            var win = window.open();
+            var url = fullUrl + '?v=' + Math.random(); // Add a random query parameter to the URL
+            var iframe = win.document.createElement('iframe');
+            iframe.style.width = "100%";
+            iframe.style.height = "100% ";
+            iframe.style.border = "2px solid #000000";
+            iframe.src = url;
+            win.document.body.style.margin = "0"; // Add this line
+            win.document.body.style.padding = "0"; // Add this line
+            win.document.body.style.overflow = "hidden"; 
+            setTimeout(function() {
+                win.document.body.appendChild(iframe);
+            }, 200); // Add this line to delay appending the iframe
+        }
+
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            if (hours < 10) {
+                hours = "0" + hours;
+            }
+            var minutes = now.getMinutes();
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            var seconds = now.getSeconds();
+            if (seconds < 10) {
+                seconds = "0" + seconds;
+            }
+            var clockElement = document.getElementById("clock");
+            clockElement.textContent = hours + ":" + minutes + ":" + seconds;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
