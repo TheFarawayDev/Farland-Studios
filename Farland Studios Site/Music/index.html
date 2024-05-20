@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    color: #fff;
+    }
+
+    .playlist-display{
+        background-color: #4c4141;
+        flex: 1;
+        border-radius: 1rem;
+        overflow: auto;
+        padding: 0 1.5rem 0 1.5rem;
+    }
+
+    .main {
+        display: flex;
+        height: 50vh;
+        padding: 0.85rem;
+            justify-content: space-around;
+            align-items: center;
+    }
+
+    .main-content {
+        background-color: #121212;
+        flex: 1;
+        border-radius: 1rem;
+        overflow: auto;
+        padding: 0 1.5rem 0 1.5rem;
+    }
+
+        .text-input, .button {
+            width: 300px;
+            height: 40px;
+            padding: 0.5rem;
+            border-radius: 0.50rem;
+            background-color: transparent;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+</style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main-content">
+            <input type="text" class="text-input" id="playlist-url" placeholder="Enter The Playlist Url Here!">
+            <button class="button" onclick="getTracks()">Get Tracks</button>
+        </div>
+    </div>
+
+    <script>
+        function getTracks() {
+            var playlistUrl = document.getElementById("playlist-url").value;
+            // Use the playlistUrl to access the tracks on Spotify using the Spotify Web API
+            // You will need to make an HTTP request to the Spotify API endpoint for retrieving playlist tracks
+            // and handle the response to display the tracks on your webpage
+        }
+    </script>
+</body>
+
+</html>
