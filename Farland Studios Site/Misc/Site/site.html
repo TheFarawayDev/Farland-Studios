@@ -5,8 +5,8 @@
     <title>Farland Studios</title>
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
     <script>
+        var isSummerBreak = false; // Set this value based on your condition
         isSecure = false;
-        isSummerBreak = false;
 
         window.addEventListener('DOMContentLoaded', function() {
             var buttonContainer = document.querySelector('.button-container');
@@ -35,11 +35,14 @@
         };
 
         var now = new Date();
-        if (now.getFullYear() === 2024 && now.getMonth() === 4 && now.getDate() === 21 && now.getHours() === 14 && now.getMinutes() === 30) {
+        var targetDate = new Date(2024, 4, 21, 14, 30); // Set your target date and time here
+        if (now > targetDate) {
             isSummerBreak = true;
         } else {
             isSummerBreak = false;
         };
+        
+        console.log('isSummerBreak:', isSummerBreak); // Print the value to the console
 
         window.addEventListener('DOMContentLoaded', function() {
             var buttonContainer = document.querySelector('.button-container');
@@ -49,6 +52,38 @@
                 buttonContainer.style.display = 'none';
             }
         });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+        if (isSummerBreak) {
+            var img = document.createElement('img');
+            img.src = 'https://kidsbaron.com/wp-content/uploads/2018/06/summer-break-slide.jpg';
+            img.style.position = 'fixed';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.top = '0';
+            img.style.left = '0';
+            img.style.zIndex = '9999';
+            img.id = 'x'; // Add id attribute with value 'x'
+            document.body.appendChild(img);
+
+            var closeButton = document.createElement('button');
+            closeButton.textContent = 'x';
+            closeButton.style.position = 'fixed';
+            closeButton.style.right = '10px';
+            closeButton.style.top = '10px';
+            closeButton.style.zIndex = '10000';
+            closeButton.style.fontSize = '20px'; // Set button font size to inherit
+            closeButton.style.fontFamily = 'inherit'; // Set button font family to inherit
+            document.body.appendChild(closeButton);
+
+            // Add an event listener to the close button to remove the image when clicked
+            closeButton.addEventListener('click', function() {
+                document.body.removeChild(img);
+                document.body.removeChild(closeButton);
+            });
+        }
+    });
     </script>
     </script>
     <style>
@@ -62,18 +97,12 @@
             overflow: hidden;
         }
 
-        .summer-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background-image: url('https://kidsbaron.com/wp-content/uploads/2018/06/summer-break-slide.jpg'); /* Replace with your image URL */
-            background-repeat: no-repeat;
-            background-size: cover;
+        #x {
+            background-color: transparent;
+            font-size: 1.5em; /* Adjust size as needed */
+            font-family: inherit; /* This will make the font the same as the parent element */
         }
-
+        
         .container {
             width: 750px;
             height: auto;
